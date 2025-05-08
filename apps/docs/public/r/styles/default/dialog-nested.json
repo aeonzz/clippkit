@@ -1,0 +1,12 @@
+{
+  "name": "dialog-nested",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/dialog-nested.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/registry/default/ui/dialog\";\n\nexport default function DialogNested() {\n  return (\n    <Dialog>\n      <DialogTrigger render={<Button variant=\"outline\">Settings</Button>} />\n      <DialogContent className=\"sm:max-w-[425px]\">\n        <DialogHeader>\n          <DialogTitle>Account Settings</DialogTitle>\n          <DialogDescription>\n            Manage your account preferences.\n          </DialogDescription>\n        </DialogHeader>\n        <div className=\"py-2\">\n          <div className=\"flex items-center justify-between\">\n            <span>Email notifications</span>\n            <span>Enabled</span>\n          </div>\n        </div>\n        <DialogFooter>\n          <Dialog>\n            <DialogTrigger render={<Button variant=\"ghost\">Advanced</Button>} />\n            <DialogContent className=\"sm:max-w-[425px]\">\n              <DialogHeader>\n                <DialogTitle>Advanced Settings</DialogTitle>\n                <DialogDescription>\n                  Configure advanced options.\n                </DialogDescription>\n              </DialogHeader>\n              <div className=\"py-2\">\n                <div className=\"flex items-center justify-between\">\n                  <span>Developer mode</span>\n                  <span>Disabled</span>\n                </div>\n              </div>\n              <DialogFooter>\n                <DialogClose render={<Button>Save</Button>} />\n              </DialogFooter>\n            </DialogContent>\n          </Dialog>\n          <DialogClose render={<Button>Save</Button>} />\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

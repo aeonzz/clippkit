@@ -1,0 +1,12 @@
+{
+  "name": "checkbox-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/checkbox-demo.tsx",
+      "content": "import { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function CheckboxDemo() {\n  return (\n    <Label className=\"flex items-center gap-2 text-base\">\n      <Checkbox />\n      Remember me\n    </Label>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

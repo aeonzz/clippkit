@@ -1,0 +1,12 @@
+{
+  "name": "kbd-ghost",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/kbd-ghost.tsx",
+      "content": "import { Kbd, KbdKey, KbdSeparator } from \"@/registry/default/ui/kbd\";\n\nexport default function KbdGhost() {\n  return (\n    <Kbd variant=\"ghost\">\n      <KbdKey>⇧</KbdKey>\n      <KbdSeparator />\n      <KbdKey>⌥</KbdKey>\n      <KbdSeparator />\n      <KbdKey title=\"Format\">F</KbdKey>\n    </Kbd>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

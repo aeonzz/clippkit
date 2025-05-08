@@ -1,0 +1,12 @@
+{
+  "name": "dropdown-menu-checkbox",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/dropdown-menu-checkbox.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  DropdownMenu,\n  DropdownMenuCheckboxItem,\n  DropdownMenuContent,\n  DropdownMenuGroup,\n  DropdownMenuGroupLabel,\n  DropdownMenuSeparator,\n  DropdownMenuTrigger,\n} from \"@/registry/default/ui/dropdown-menu\";\n\nexport default function DropdownMenuCheckbox() {\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger\n        render={<Button variant=\"outline\">Preferences</Button>}\n      />\n      <DropdownMenuContent>\n        <DropdownMenuGroup>\n          <DropdownMenuGroupLabel>Preferences</DropdownMenuGroupLabel>\n          <DropdownMenuSeparator className=\"my-1\" />\n          <DropdownMenuCheckboxItem>\n            Enable Notifications\n          </DropdownMenuCheckboxItem>\n          <DropdownMenuCheckboxItem defaultChecked>\n            Dark Mode\n          </DropdownMenuCheckboxItem>\n          <DropdownMenuCheckboxItem>Automatic Updates</DropdownMenuCheckboxItem>\n        </DropdownMenuGroup>\n      </DropdownMenuContent>\n    </DropdownMenu>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

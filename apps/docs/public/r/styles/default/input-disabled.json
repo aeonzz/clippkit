@@ -1,0 +1,12 @@
+{
+  "name": "input-disabled",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/input-disabled.tsx",
+      "content": "import { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function DisabledInput() {\n  return (\n    <div className=\"w-full max-w-xs\">\n      <Label>Username</Label>\n      <Input\n        id=\"username\"\n        name=\"username\"\n        type=\"text\"\n        disabled\n        placeholder=\"Username\"\n        autoComplete=\"off\"\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

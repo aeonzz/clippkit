@@ -1,0 +1,12 @@
+{
+  "name": "meter-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/meter-demo.tsx",
+      "content": "import { Meter, MeterLabel, MeterValue } from \"@/registry/default/ui/meter\";\n\nexport default function MeterDemo() {\n  return (\n    <Meter value={34} className=\"max-w-xs\">\n      <MeterLabel>Battery Level</MeterLabel>\n      <MeterValue />\n    </Meter>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

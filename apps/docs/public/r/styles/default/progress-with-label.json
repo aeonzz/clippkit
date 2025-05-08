@@ -1,0 +1,12 @@
+{
+  "name": "progress-with-label",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/progress-with-label.tsx",
+      "content": "import * as React from \"react\";\n\nimport { Progress, ProgressLabel } from \"@/registry/default/ui/progress\";\n\nexport default function ProgressWithLabel() {\n  const [value, setValue] = React.useState(0);\n\n  React.useEffect(() => {\n    const interval = window.setInterval(() => {\n      setValue((current) =>\n        Math.min(100, Math.round(current + Math.random() * 25))\n      );\n    }, 1000);\n    return () => clearInterval(interval);\n  }, []);\n\n  return (\n    <Progress value={value} className=\"min-w-xs\">\n      <ProgressLabel>Loading...</ProgressLabel>\n    </Progress>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

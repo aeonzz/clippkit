@@ -1,0 +1,12 @@
+{
+  "name": "toast-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/toast-demo.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { useToastManager } from \"@/registry/default/ui/toast\";\n\nexport default function ToastDemo() {\n  const toast = useToastManager();\n  return (\n    <Button\n      onClick={() => {\n        toast.add({\n          title: \"Profile Updated\",\n          description: \"Your information has been saved.\",\n        });\n      }}\n    >\n      Show Toast\n    </Button>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

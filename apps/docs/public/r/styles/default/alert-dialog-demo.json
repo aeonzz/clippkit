@@ -1,0 +1,12 @@
+{
+  "name": "alert-dialog-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/alert-dialog-demo.tsx",
+      "content": "import * as React from \"react\";\n\nimport {\n  AlertDialog,\n  AlertDialogClose,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/default/ui/alert-dialog\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport default function AlertDialogDemo() {\n  const [open, setOpen] = React.useState(false);\n  return (\n    <AlertDialog open={open} onOpenChange={setOpen}>\n      <AlertDialogTrigger render={<Button>Delete Item</Button>} />\n      <AlertDialogContent>\n        <AlertDialogHeader>\n          <AlertDialogTitle>Confirm Deletion</AlertDialogTitle>\n          <AlertDialogDescription>\n            Are you sure you want to delete this item? This action cannot be\n            undone.\n          </AlertDialogDescription>\n        </AlertDialogHeader>\n        <AlertDialogFooter>\n          <AlertDialogClose>Cancel</AlertDialogClose>\n          <Button variant=\"destructive\" onClick={() => setOpen(false)}>\n            Delete\n          </Button>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

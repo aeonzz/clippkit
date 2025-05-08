@@ -1,0 +1,12 @@
+{
+  "name": "scroll-area-horizontal",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/scroll-area-horizontal.tsx",
+      "content": "import Link from \"next/link.js\";\n\nimport { ScrollArea } from \"@/registry/default/ui/scroll-area\";\n\nconst components = [\n  {\n    title: \"Button\",\n    description: \"A UI component for triggering actions or navigation.\",\n    href: \"/docs/ui/button\",\n  },\n  {\n    title: \"Accordion\",\n    description:\n      \"A UI component for showing and hiding content in collapsible sections.\",\n    href: \"/docs/ui/accordion\",\n  },\n  {\n    title: \"Dialog\",\n    description:\n      \"A UI component for displaying modal dialogs to capture user input or confirm actions.\",\n    href: \"/docs/ui/dialog\",\n  },\n  {\n    title: \"Tooltip\",\n    description: \"A component that groups related actions and controls.\",\n    href: \"/docs/ui/tooltip\",\n  },\n];\n\nexport default function ScrollAreaHorizontal() {\n  return (\n    <ScrollArea\n      className=\"h-fit w-[550px] rounded-md border\"\n      orientation=\"horizontal\"\n    >\n      <div className=\"flex space-x-2 py-4\">\n        {components.map((comp, i) => (\n          <Link\n            key={i}\n            href={comp.href}\n            className=\"hover:bg-secondary flex w-48 cursor-pointer flex-col justify-between gap-2 rounded-md border bg-transparent p-3 no-underline shadow-sm\"\n          >\n            <h4 className=\"text-lg leading-none font-medium\">{comp.title}</h4>\n            <p className=\"text-muted-foreground text-xs\">{comp.description}</p>\n          </Link>\n        ))}\n      </div>\n    </ScrollArea>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

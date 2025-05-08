@@ -1,0 +1,12 @@
+{
+  "name": "toggle-outline",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/toggle-outline.tsx",
+      "content": "import { Bold } from \"lucide-react\";\n\nimport { Toggle } from \"@/registry/default/ui/toggle\";\n\nexport default function ToogleOutline() {\n  return (\n    <Toggle aria-label=\"Toggle font weight\" variant=\"outline\">\n      <Bold className=\"size-4\" />\n    </Toggle>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

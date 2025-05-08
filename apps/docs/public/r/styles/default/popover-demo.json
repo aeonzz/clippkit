@@ -1,0 +1,12 @@
+{
+  "name": "popover-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/popover-demo.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Popover,\n  PopoverContent,\n  PopoverDescription,\n  PopoverHeader,\n  PopoverTitle,\n  PopoverTrigger,\n} from \"@/registry/default/ui/popover\";\n\nexport default function PopoverDemo() {\n  return (\n    <Popover>\n      <PopoverTrigger render={<Button variant=\"outline\">Open</Button>} />\n      <PopoverContent>\n        <PopoverHeader>\n          <PopoverTitle>Event Details</PopoverTitle>\n          <PopoverDescription>\n            Join us for an exclusive workshop on modern web development. Click\n            below to register or learn more.\n          </PopoverDescription>\n        </PopoverHeader>\n      </PopoverContent>\n    </Popover>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

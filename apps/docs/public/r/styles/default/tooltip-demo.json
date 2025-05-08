@@ -1,0 +1,12 @@
+{
+  "name": "tooltip-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/tooltip-demo.tsx",
+      "content": "import {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\n\nimport { Button } from \"../ui/button\";\n\nexport default function TooltipDemo() {\n  return (\n    <TooltipProvider>\n      <Tooltip>\n        <TooltipTrigger render={<Button>Hover</Button>} />\n        <TooltipContent>\n          <p>Send message</p>\n        </TooltipContent>\n      </Tooltip>\n    </TooltipProvider>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

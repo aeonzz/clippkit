@@ -1,0 +1,12 @@
+{
+  "name": "slider-with-value",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/slider-with-value.tsx",
+      "content": "import { Slider, SliderValue } from \"@/registry/default/ui/slider\";\n\nexport default function SliderWithValue() {\n  return (\n    <Slider defaultValue={32} className=\"w-full max-w-xs\">\n      <SliderValue />\n    </Slider>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}
