@@ -272,16 +272,6 @@ export const examples: Registry = [
     ],
   },
   {
-    name: "accordion-demo-two",
-    type: "registry:example",
-    files: [
-      {
-        path: "examples/accordion-demo-two.tsx",
-        type: "registry:example",
-      },
-    ],
-  },
-  {
     name: "accordion-disabled",
     type: "registry:example",
     files: [

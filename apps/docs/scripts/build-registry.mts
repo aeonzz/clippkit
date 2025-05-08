@@ -81,6 +81,7 @@ export const Index: Record<string, any> = {
         try {
           raw = await fs.readFile(file, "utf8");
         } catch (_error) {
+          console.error(_error);
           continue;
         }
         const tempFile = await createTempSourceFile(filename);
@@ -106,10 +107,10 @@ export const Index: Record<string, any> = {
           }
         >();
         for (const node of sourceFile.getImportDeclarations()) {
-          const module = node.getModuleSpecifier().getLiteralValue();
+          const moduleSpecifier = node.getModuleSpecifier().getLiteralValue();
           for (const item of node.getNamedImports()) {
             imports.set(item.getText(), {
-              module,
+              module: moduleSpecifier,
               text: node.getText(),
             });
           }
@@ -117,7 +118,7 @@ export const Index: Record<string, any> = {
           const defaultImport = node.getDefaultImport();
           if (defaultImport) {
             imports.set(defaultImport.getText(), {
-              module,
+              module: moduleSpecifier,
               text: defaultImport.getText(),
               isDefault: true,
             });
@@ -405,6 +406,7 @@ async function buildStyles(registry: Registry) {
                 content = fixImport(content);
               }
             } catch (_error) {
+              console.error(_error);
               return;
             }
 
