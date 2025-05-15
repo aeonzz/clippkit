@@ -632,6 +632,16 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "sliding-text-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/sliding-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "slider-disabled",
     type: "registry:example",
     files: [
