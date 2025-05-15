@@ -4,7 +4,7 @@ import SlidingText from "../ui/sliding-text";
 
 export default function SlidingTextDemo() {
   const slidingTextProps = {
-    text: "Hello Remotion!",
+    text: "Hello Sam!",
     textColor: "var(--foreground)",
     fontSize: "3rem",
     slideDirection: "left" as const,
@@ -27,6 +27,7 @@ export default function SlidingTextDemo() {
         width: "100%",
         height: "100%", // Player will scale to fit its container
       }}
+      autoPlay
       controls // Show player controls
       loop // Loop the animation
     />
