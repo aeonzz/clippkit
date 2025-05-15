@@ -30,7 +30,7 @@ export const baseOptions: BaseLayoutProps = {
     },
     {
       text: "Components",
-      url: "/docs/ui/accordion",
+      url: "/docs/ui/popping-text",
     },
     {
       type: "icon",

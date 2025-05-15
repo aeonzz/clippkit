@@ -642,6 +642,16 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "popping-text-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/popping-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "slider-disabled",
     type: "registry:example",
     files: [
