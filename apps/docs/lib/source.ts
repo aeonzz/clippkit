@@ -19,20 +19,26 @@ export const source = loader({
   },
   pageTree: {
     attachFile(node, file) {
-      const additionalElement = (file?.data.data as { new?: boolean }).new
-        ? createElement(
-            Badge,
-            { className: "ml-auto font-base text-xs", variant: "outline" },
-            "New"
-          )
-        : null;
+      // Only modify if it's a file/page node
+      if (file) {
+        const originalName = node.name; // Preserve original string name for the span
+        const additionalElement = (file.data.data as { new?: boolean })?.new
+          ? createElement(
+              Badge,
+              { className: "ml-auto font-base text-xs", variant: "outline" },
+              "New"
+            )
+          : null;
 
-      node.name = createElement(
-        "span",
-        { className: "flex w-full gap-2" },
-        createElement("span", null, node.name),
-        additionalElement
-      );
+        node.name = createElement(
+          "span",
+          { className: "flex w-full gap-2 items-center" },
+          createElement("span", null, originalName),
+          additionalElement
+        );
+      }
+      // If it's a folder (file is undefined), node.name remains a string.
+      // Separators also don't have a 'file' and their 'name' should remain a string.
       return node;
     },
   },
