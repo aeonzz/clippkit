@@ -4,7 +4,7 @@ import SlidingText from "../ui/sliding-text";
 
 export default function SlidingTextDemo() {
   const slidingTextProps = {
-    text: "Hello Sam!",
+    text: "Sliding Text!",
     textColor: "var(--foreground)",
     fontSize: "3rem",
     slideDirection: "left" as const,

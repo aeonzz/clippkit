@@ -39,7 +39,7 @@ export default function HomePage() {
             </div>
             <div>
               <Link
-                href="/docs/ui/accordion"
+                href="/docs/ui/text-elements/popping-text"
                 prefetch
                 className={cn(
                   buttonVariants({ variant: "outline" }),
