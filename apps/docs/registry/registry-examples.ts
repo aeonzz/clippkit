@@ -21,4 +21,24 @@ export const examples: Registry = [
       },
     ],
   },
+  {
+    name: "glitch-text-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/glitch-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "typing-text-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/typing-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

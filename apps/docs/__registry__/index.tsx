@@ -585,6 +585,38 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: []
     },
+    "glitch-text-demo": {
+      name: "glitch-text-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/examples/glitch-text-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/glitch-text-demo.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "typing-text-demo": {
+      name: "typing-text-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/examples/typing-text-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/typing-text-demo.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
     "popping-text": {
       name: "popping-text",
       description: "",
@@ -596,6 +628,38 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/ui/popping-text.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "glitch-text": {
+      name: "glitch-text",
+      description: "",
+      type: "registry:component",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/glitch-text.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/glitch-text.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "typing-text": {
+      name: "typing-text",
+      description: "",
+      type: "registry:component",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/typing-text.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/typing-text.tsx")),
       source: "",
       category: "",
       subcategory: "",

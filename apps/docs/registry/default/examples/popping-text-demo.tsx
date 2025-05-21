@@ -6,7 +6,7 @@ export default function PoppingTextDemo() {
   const poppingTextProps = {
     text: "Popping Text",
     colors: ["var(--foreground)"],
-    fontSize: "3rem",
+    fontSize: "2.5rem",
     fontWeight: "bold",
   };
 

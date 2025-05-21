@@ -1,0 +1,147 @@
+---
+title: Glitch Text
+description: A Remotion video component that animates text with a glitch effect.
+preview: true
+---
+
+<ComponentTabs name="glitch-text-demo" />
+
+## Installation
+
+<Callout title="CLI Install Coming Soon" type="warn">
+  Installation via `npx shadcnui install clipkittt@glitch-text` is coming soon.
+  For now, please follow the manual installation instructions. [Github Task
+  Here](https://github.com/reactvideoeditor/clippkit/issues/15)
+
+Eventually users will be able to run the following command:
+
+      ```package-install
+    npx shadcn@latest add "https://clippkit/r/glitch-text"
+    ```
+
+</Callout>
+
+### Manual
+
+<Steps>
+  <Step>
+    Create a new file, for example, at `src/components/glitch-text.tsx` (or your preferred location) and paste the following code into it.
+
+    ```tsx title="src/components/glitch-text.tsx"
+    /**
+     * Free Remotion Template Component
+     * ---------------------------------
+     * This template is free to use in your projects!
+     * Credit appreciated but not required.
+     *
+     * Created by the team at https://www.reactvideoeditor.com
+     *
+     * Happy coding and building amazing videos! 🎉
+     */
+
+    "use client";
+
+    import { useCurrentFrame } from "remotion";
+
+    export default function GlitchText() {
+      const frame = useCurrentFrame();
+
+      const glitchIntensity = Math.sin(frame / 10) * 10;
+      const rgbOffset = Math.sin(frame / 5) * 5;
+
+      return (
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            fontSize: "5rem",
+            fontWeight: "bold",
+            fontFamily: "monospace",
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              color: "cyan",
+              transform: `translate(${rgbOffset}px, ${glitchIntensity}px)`,
+              mixBlendMode: "screen",
+            }}
+          >
+            GLITCH
+          </div>
+          <div
+            style={{
+              position: "absolute",
+              color: "magenta",
+              transform: `translate(${-rgbOffset}px, ${-glitchIntensity}px)`,
+              mixBlendMode: "screen",
+            }}
+          >
+            GLITCH
+          </div>
+          <div style={{ color: "white", opacity: 0.8 }}>GLITCH</div>
+        </div>
+      );
+    }
+    ```
+
+  </Step>
+  
+  <Step>Update the import paths in your Remotion compositions if you placed the file in a different location than shown in the usage examples.</Step>
+</Steps>
+
+## Usage
+
+Once the `GlitchText` component is added to your project (either via CLI or Manually), you can integrate it into your Remotion project by importing it and defining a `Composition`.
+
+<Callout title="Prerequisite">
+  Ensure you have a Remotion project set up. If not, please refer to the
+  [Remotion documentation](https://www.remotion.dev/docs/) to get started.
+</Callout>
+
+**Define a Composition:**
+
+In your Remotion project's entry file (commonly `src/Root.tsx` or `src/index.ts`), import `GlitchText` and define a `Composition`.
+
+```tsx title="src/main.tsx (or equivalent)"
+import { Player } from "@remotion/player";
+
+import GlitchText from "../ui/glitch-text"; // Adjust path as necessary
+
+export default function GlitchTextDemoPage() {
+  return (
+    <Player
+      component={GlitchText}
+      durationInFrames={120} // Total duration of the player timeline (e.g., 4 seconds at 30fps)
+      compositionWidth={480}
+      compositionHeight={270} // 16:9 aspect ratio
+      fps={30}
+      style={{
+        width: "100%",
+        height: "100%", // Player will scale to fit its container
+      }}
+      autoPlay
+      controls // Show player controls
+      loop // Loop the animation
+    />
+  );
+}
+```
+
+## API Reference
+
+The component exported as `GlitchText` (e.g., from `apps/docs/registry/default/ui/glitch-text.tsx` or your project's component path) accepts the following props to customize its animation and appearance:
+
+| Prop               | Type     | Default Value                | Description                                                                                              |
+| ------------------ | -------- | ---------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `text`             | `string` | "GLITCH"                     | The text content to display.                                                                             |
+| `textColor`        | `string` | "var(--glitch-effect-white)" | The color of the main, stable text. Accepts any valid CSS color value, ideally a CSS variable.           |
+| `glitchTextColor1` | `string` | "var(--glitch-cyan)"         | The color of the first glitching text layer. Accepts any valid CSS color value, ideally a CSS variable.  |
+| `glitchTextColor2` | `string` | "var(--glitch-magenta)"      | The color of the second glitching text layer. Accepts any valid CSS color value, ideally a CSS variable. |
+| `fontSize`         | `string` | "5rem"                       | The font size of the text. Accepts any valid CSS font-size value.                                        |
+| `fontFamily`       | `string` | "monospace"                  | The font family of the text.                                                                             |
+| `fontWeight`       | `string` | "bold"                       | The font weight of the text.                                                                             |
+| `glitchStrength`   | `number` | 10                           | The intensity of the glitch effect (how far the text elements move).                                     |
+| `glitchSpeed`      | `number` | 5                            | The speed of the glitch animation (higher numbers mean slower, more spaced out glitches).                |

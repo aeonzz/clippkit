@@ -42,6 +42,11 @@
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
   --decorator-line: oklch(0.72 0.11 255);
+
+  /* Glitch effect specific colors */
+  --glitch-color-1: #CCCCCC;
+  --glitch-color-2: #888888;
+  --glitch-color-3: #444444;
 }
 
 .dark {
@@ -76,7 +81,12 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
-  --decorator-line:oklch(0.72 0.164 58.26 / 23.2%)
+  --decorator-line:oklch(0.72 0.164 58.26 / 23.2%);
+
+  /* Glitch effect specific colors for dark theme (can be same or different) */
+  --glitch-cyan: cyan;
+  --glitch-magenta: magenta;
+  --glitch-effect-white: white;
 }
 
 @theme inline {

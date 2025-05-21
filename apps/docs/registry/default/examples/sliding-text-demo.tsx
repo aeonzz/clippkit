@@ -6,7 +6,7 @@ export default function SlidingTextDemo() {
   const slidingTextProps = {
     text: "Sliding Text!",
     textColor: "var(--foreground)",
-    fontSize: "3rem",
+    fontSize: "2.5rem",
     slideDirection: "left" as const,
     durationInFrames: 30, // Animation duration for the text itself
     initialOffset: 150,

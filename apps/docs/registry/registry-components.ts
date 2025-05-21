@@ -11,4 +11,24 @@ export const components: Registry = [
       },
     ],
   },
+  {
+    name: "glitch-text",
+    type: "registry:component",
+    files: [
+      {
+        path: "ui/glitch-text.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "typing-text",
+    type: "registry:component",
+    files: [
+      {
+        path: "ui/typing-text.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 ];
