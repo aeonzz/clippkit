@@ -1,0 +1,15 @@
+{
+  "name": "toolbar",
+  "type": "registry:ui",
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
+  "files": [
+    {
+      "path": "ui/toolbar.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Toolbar as ToolbarPrimitive } from \"@base-ui-components/react/toolbar\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction Toolbar({\n  className,\n  ...props\n}: Omit<React.ComponentProps<typeof ToolbarPrimitive.Root>, \"orientation\">) {\n  return (\n    <ToolbarPrimitive.Root\n      data-slot=\"toolbar\"\n      className={cn(\"flex items-center gap-1 rounded-lg border p-1\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction ToolbarButton({\n  className,\n  ...props\n}: React.ComponentProps<typeof ToolbarPrimitive.Button>) {\n  return (\n    <ToolbarPrimitive.Button\n      data-slot=\"toolbar-button\"\n      className={cn(\n        \"shadow-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction ToolbarLink({\n  className,\n  ...props\n}: React.ComponentProps<typeof ToolbarPrimitive.Link>) {\n  return (\n    <ToolbarPrimitive.Link\n      data-slot=\"toolbar-link\"\n      className={cn(\"\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction ToolbarSeparator({\n  className,\n  ...props\n}: React.ComponentProps<typeof ToolbarPrimitive.Separator>) {\n  return (\n    <ToolbarPrimitive.Separator\n      data-slot=\"toolbar-separator\"\n      className={cn(\"bg-border h-8 w-px\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction ToolbarGroup({\n  className,\n  ...props\n}: React.ComponentProps<typeof ToolbarPrimitive.Group>) {\n  return (\n    <ToolbarPrimitive.Group\n      data-slot=\"toolbar-group\"\n      className={cn(\n        \"flex items-center gap-1 *:data-[slot='toolbar-button']:cursor-pointer\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction ToolbarInput({\n  className,\n  ...props\n}: React.ComponentProps<typeof ToolbarPrimitive.Input>) {\n  return (\n    <ToolbarPrimitive.Input\n      data-slot=\"toolbar-input\"\n      className={cn(\"\", className)}\n      {...props}\n    />\n  );\n}\n\nexport {\n  Toolbar,\n  ToolbarButton,\n  ToolbarLink,\n  ToolbarSeparator,\n  ToolbarGroup,\n  ToolbarInput,\n};\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

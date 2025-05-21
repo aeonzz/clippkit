@@ -20,6 +20,9 @@ export const baseOptions: BaseLayoutProps = {
         <span className="font-medium [.uwu_&]:hidden [header_&]:text-[15px]">
           {siteConfig.name}
         </span>
+        <span className="bg-muted text-muted-foreground inline-flex items-center rounded-sm px-1.5 py-0.5 text-[10px] font-semibold tracking-wider uppercase">
+          BETA
+        </span>
       </>
     ),
   },
@@ -30,7 +33,7 @@ export const baseOptions: BaseLayoutProps = {
     },
     {
       text: "Components",
-      url: "/docs/ui/popping-text",
+      url: "/docs/ui/text-elements/popping-text",
     },
     {
       type: "icon",

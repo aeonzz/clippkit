@@ -1,17 +1,39 @@
 ---
 title: Installation
-description: Learn how to set up dependencies and organize your application structure.
+description: How to set up dependencies and start using Clippkit in your Remotion project.
 icon: Terminal
 ---
 
-## Installation
+### What You’ll Need First
 
-1. TODO: Explain how this takes a similar approach to shadcn/ui
+<Callout title="Requires a Remotion Project" type="warn">
+  Clippkit components only work inside a Remotion setup. If you haven’t got one
+  running yet, check out the [Remotion getting started
+  guide](https://www.remotion.dev/docs/) first.
+</Callout>
 
-- Use something like `npx shadcn@latest add clippkitt/example` to scaffold the video editor structure
+---
 
-2. TODO: Mention Remotion dependency
+### How to Use a Component (Manual Setup for Now)
 
-3. TODO: Add setup guide for Remotion
+Until the CLI is ready, here’s how to add a component manually:
 
-4. TODO: Add how to manually install if not using `npx`
+1. **Browse the Docs:** Pick a component you’d like to use.
+2. **Copy the Code:** Each component page includes its source.
+3. **Add to Your Project:** Create a new file inside your Remotion app (e.g., `src/components/PoppingText.tsx`) and paste the code in.
+4. **Fix Imports (if needed):** Adjust any internal paths or helpers if your project’s structure is different.
+5. **Use It:** Now you can import and use the component like any other React component.
+
+We know this isn’t the smoothest setup, but it’s temporary. The idea is to give you full access while we finish the tooling.
+
+---
+
+### CLI Install – Coming Soon
+
+We’re nearly there with a CLI to make this whole thing easier. You’ll soon be able to run something like:
+
+      ```package-install
+    npx shadcn@latest add "https://clippkit/r/sliding-text"
+    ```
+
+    This will set everything up for you automatically—no copy-pasting needed.

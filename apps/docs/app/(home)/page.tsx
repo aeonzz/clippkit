@@ -58,7 +58,7 @@ export default function HomePage() {
       </div>
       <footer className="flex h-16 items-center justify-center">
         <div className="max-w-fd-container w-fit px-3">
-          <p className="text-muted-foreground flex items-center gap-1.5 text-sm font-medium tracking-tight">
+          <p className="text-muted-foreground flex items-center gap-1.5 text-sm font-light tracking-tight">
             Brought to you by{" "}
             <Link
               href="https://www.reactvideoeditor.com/"
