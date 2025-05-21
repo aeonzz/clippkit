@@ -1,0 +1,12 @@
+{
+  "name": "toast-card-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/toast-card-demo.tsx",
+      "content": "import { Player } from \"@remotion/player\";\n\nimport ToastCard from \"../ui/toast-card\"; // Adjust path as necessary\n\nexport default function ToastCardDemo() {\n  const toastCardProps = {\n    title: \"Heads Up!\",\n    message: \"This is a toast notification example.\",\n    titleColor: \"#FFFFFF\",\n    messageColor: \"#E0E0E0\",\n    backgroundColor: \"#333333\",\n    titleFontSize: \"1.2rem\",\n    messageFontSize: \"1rem\",\n    width: \"320px\",\n    padding: \"18px 22px\",\n    borderRadius: \"8px\",\n    borderColor: \"#555555\",\n    borderWidth: \"1px\",\n    borderStyle: \"solid\" as const,\n    boxShadow: \"0 6px 15px rgba(0,0,0,0.2)\",\n    positionPreset: \"bottom-right\" as const,\n    margin: \"25px\",\n    entryDurationInFrames: 25,\n    visibleDurationInFrames: 150,\n    exitDurationInFrames: 25,\n    damping: 18,\n    mass: 0.9,\n    stiffness: 110,\n    slideOffset: 60,\n  };\n\n  return (\n    <Player\n      component={ToastCard}\n      inputProps={toastCardProps}\n      durationInFrames={\n        toastCardProps.entryDurationInFrames +\n        toastCardProps.visibleDurationInFrames +\n        toastCardProps.exitDurationInFrames +\n        30\n      } // Add buffer to see full exit\n      compositionWidth={500}\n      compositionHeight={400}\n      fps={30}\n      style={{\n        width: \"100%\",\n        height: \"100%\",\n        backgroundColor: \"var(--background)\", // Or a contrasting color\n      }}\n      autoPlay\n      controls\n      loop\n    />\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

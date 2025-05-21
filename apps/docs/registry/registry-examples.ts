@@ -51,4 +51,24 @@ export const examples: Registry = [
       },
     ],
   },
+  {
+    name: "floating-card-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/floating-card-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toast-card-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/toast-card-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

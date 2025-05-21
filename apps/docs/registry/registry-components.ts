@@ -41,4 +41,24 @@ export const components: Registry = [
       },
     ],
   },
+  {
+    name: "floating-card",
+    type: "registry:component",
+    files: [
+      {
+        path: "ui/floating-card.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "toast-card",
+    type: "registry:component",
+    files: [
+      {
+        path: "ui/toast-card.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 ];

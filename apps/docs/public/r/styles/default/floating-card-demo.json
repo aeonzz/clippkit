@@ -1,0 +1,12 @@
+{
+  "name": "floating-card-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/floating-card-demo.tsx",
+      "content": "import { Player } from \"@remotion/player\";\n\nimport FloatingCard from \"../ui/floating-card\"; // Adjusted path\n\nexport default function FloatingCardDemo() {\n  const floatingCardProps = {\n    text: \"Floating Card!\",\n    textColor: \"var(--foreground)\",\n    backgroundColor: \"var(--card)\",\n    fontSize: \"1.5rem\",\n    width: \"250px\",\n    height: \"180px\",\n    borderRadius: \"20px\",\n    borderColor: \"var(--primary)\",\n    borderWidth: \"1px\",\n    borderStyle: \"solid\" as const,\n    durationInFrames: 40, // Entry animation duration\n    damping: 15,\n    mass: 0.7,\n    stiffness: 110,\n    boxShadow: \"0 10px 25px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.1)\",\n    floatAmplitude: 15, // Amplitude of the float\n    floatSpeed: 40, // Speed of the float\n  };\n\n  return (\n    <Player\n      component={FloatingCard}\n      inputProps={floatingCardProps}\n      durationInFrames={180} // Total duration of the player timeline, longer to see float\n      compositionWidth={480}\n      compositionHeight={400}\n      fps={30}\n      style={{\n        width: \"100%\",\n        height: \"100%\",\n        backgroundColor: \"var(--background)\",\n      }}\n      autoPlay\n      controls\n      loop\n    />\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}
