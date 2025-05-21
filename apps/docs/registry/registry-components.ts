@@ -61,4 +61,24 @@ export const components: Registry = [
       },
     ],
   },
+  {
+    name: "linear-waveform",
+    type: "registry:component",
+    files: [
+      {
+        path: "ui/linear-waveform.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "circular-waveform",
+    type: "registry:component",
+    files: [
+      {
+        path: "ui/circular-waveform.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 ];

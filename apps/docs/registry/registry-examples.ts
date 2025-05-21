@@ -71,4 +71,24 @@ export const examples: Registry = [
       },
     ],
   },
+  {
+    name: "linear-waveform-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/linear-waveform-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "circular-waveform-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/circular-waveform-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

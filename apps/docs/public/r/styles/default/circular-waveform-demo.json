@@ -1,0 +1,12 @@
+{
+  "name": "circular-waveform-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/circular-waveform-demo.tsx",
+      "content": "import { Player } from \"@remotion/player\";\n\nimport CircularWaveform from \"../ui/circular-waveform\";\n\nexport default function CircularWaveformDemo() {\n  const circularWaveformProps = {\n    barCount: 80,\n    barWidth: 4,\n    waveAmplitude: 60,\n    waveSpeed: 8,\n    randomness: 40,\n    radius: 120,\n    // Explicitly set height and width for the demo player if needed\n    // otherwise it will use videoConfig dimensions\n  };\n\n  return (\n    <Player\n      component={CircularWaveform}\n      inputProps={circularWaveformProps}\n      durationInFrames={300} // e.g., 10 seconds at 30fps\n      compositionWidth={640}\n      compositionHeight={360} // 16:9 aspect ratio\n      fps={30}\n      style={{\n        width: \"100%\",\n        height: \"100%\", // Player will scale to fit its container\n        backgroundColor: \"transparent\",\n      }}\n      autoPlay\n      controls // Show player controls\n      loop // Loop the animation\n    />\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

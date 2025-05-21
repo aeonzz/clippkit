@@ -1,0 +1,12 @@
+{
+  "name": "linear-waveform-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/linear-waveform-demo.tsx",
+      "content": "import { Player } from \"@remotion/player\";\n\nimport LinearWaveform from \"../ui/linear-waveform\";\n\nexport default function LinearWaveformDemo() {\n  const linearWaveformProps = {\n    barCount: 40,\n    barWidth: 8,\n    barGap: 3,\n    barBorderRadius: \"1px\",\n    waveAmplitude: 150,\n    waveSpeed: 5,\n    randomness: 70,\n    // Explicitly set height and width for the demo player if needed\n    // otherwise it will use videoConfig dimensions\n  };\n\n  return (\n    <Player\n      component={LinearWaveform}\n      inputProps={linearWaveformProps}\n      durationInFrames={300} // e.g., 10 seconds at 30fps\n      compositionWidth={640}\n      compositionHeight={360} // 16:9 aspect ratio\n      fps={30}\n      style={{\n        width: \"100%\",\n        height: \"100%\", // Player will scale to fit its container\n        backgroundColor: \"transparent\", // Using CSS variable for background\n      }}\n      autoPlay\n      controls // Show player controls\n      loop // Loop the animation\n    />\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}
