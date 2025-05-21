@@ -4,6 +4,9 @@ description: A Remotion component that animates text popping in with a spring ef
 preview: true
 ---
 
+<ComponentSource name="popping-text" />
+<ComponentSource name="popping-text-demo" />
+
 <ComponentTabs name="popping-text-demo" />
 
 ## Installation
@@ -224,20 +227,6 @@ export function PoppingTextDemo() {
   );
 }
 ```
-
-**Explanation:**
-
-- **`import PoppingText from "./templates/popping-text";`**: This line imports your `PoppingText` component. **Adjust the path** according to where the `popping-text.tsx` file is located in your project.
-- **`<Player ... />`**: This Remotion component is essential. It registers your animation with Remotion.
-  - `component`: Set to `PoppingText` to render your component.
-  - `durationInFrames`, `fps`, `width`, `height`: Standard Remotion composition settings.
-  - `inputProps`: This is how you pass the properties (like `text`, `colors`, etc.) to your `PoppingText` component. These are the props defined in the [API Reference](#api-reference).
-
-<Callout title="Key Remotion Concept: Player">
-  The `Player` component is fundamental in Remotion. It allows you to preview
-  and test your animations directly in the browser. You can have multiple
-  `Player` components in your application, each showcasing different animations.
-</Callout>
 
 ## API Reference
 

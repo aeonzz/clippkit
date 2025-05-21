@@ -1,14 +1,3 @@
-/**
- * Free Remotion Template Component
- * ---------------------------------
- * This template is free to use in your projects!
- * Credit appreciated but not required.
- *
- * Created by the team at https://www.reactvideoeditor.com
- *
- * Happy coding and building amazing videos! 🎉
- */
-
 "use client";
 
 import { spring, useCurrentFrame, useVideoConfig } from "remotion";
@@ -17,19 +6,19 @@ interface PoppingTextProps {
   text?: string;
   colors?: string[];
   fontSize?: string;
-  fontFamily?: string;
   delayPerChar?: number;
+  fontWeight?: string;
 }
 
 export default function PoppingText({
-  text: textProp = "BINO!",
+  text: textProp = "Popping Text",
   colors: colorsProp = [
-    "#000000", // black
-    "#FFFFFF", // white
+    "var(--foreground)", // Default to CSS variable for foreground color
+    "var(--primary)", // Default to CSS variable for primary color
   ],
-  fontSize: fontSizeProp = "clamp(3rem, 8vw, 8rem)",
-  fontFamily: fontFamilyProp = "'Impact', 'Arial Black', sans-serif",
+  fontSize: fontSizeProp = "4rem", // Changed to 4rem to match sliding-text
   delayPerChar = 7,
+  fontWeight: fontWeightProp = "bold",
 }: PoppingTextProps) {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -88,11 +77,8 @@ export default function PoppingText({
               opacity,
               color: currentColors[colorIndex],
               fontSize: fontSizeProp,
-              fontWeight: "900",
-              margin: "0 0.1em",
+              fontWeight: fontWeightProp,
               transform: `scale(${scale})`,
-              fontFamily: fontFamilyProp,
-              letterSpacing: "0.05em",
             }}
           >
             {char === " " ? "\u00A0" : char}

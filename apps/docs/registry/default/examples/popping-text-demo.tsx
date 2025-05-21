@@ -4,13 +4,10 @@ import PoppingText from "../ui/popping-text";
 
 export default function PoppingTextDemo() {
   const poppingTextProps = {
-    text: "Hello!",
+    text: "Popping Text",
     colors: ["var(--foreground)"],
-    fontSize: "4rem",
-    // Example of customizing animation params, uncomment to use
-    // delayPerChar: 5,
-    // opacityMass: 0.2,
-    // yFrom: -100,
+    fontSize: "3rem",
+    fontWeight: "bold",
   };
 
   return (
