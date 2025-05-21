@@ -1,0 +1,12 @@
+{
+  "name": "popping-text",
+  "type": "registry:component",
+  "files": [
+    {
+      "path": "ui/popping-text.tsx",
+      "content": "\"use client\";\n\nimport { spring, useCurrentFrame, useVideoConfig } from \"remotion\";\n\ninterface PoppingTextProps {\n  text?: string;\n  colors?: string[];\n  fontSize?: string;\n  delayPerChar?: number;\n  fontWeight?: string;\n}\n\nexport default function PoppingText({\n  text: textProp = \"Popping Text\",\n  colors: colorsProp = [\n    \"var(--foreground)\", // Default to CSS variable for foreground color\n    \"var(--primary)\", // Default to CSS variable for primary color\n  ],\n  fontSize: fontSizeProp = \"4rem\", // Changed to 4rem to match sliding-text\n  delayPerChar = 7,\n  fontWeight: fontWeightProp = \"bold\",\n}: PoppingTextProps) {\n  const frame = useCurrentFrame();\n  const { fps } = useVideoConfig();\n\n  const textChars = textProp.split(\"\");\n  const currentColors = colorsProp;\n\n  return (\n    <div\n      style={{\n        position: \"absolute\",\n        top: \"50%\",\n        left: \"50%\",\n        transform: \"translate(-50%, -50%)\",\n        width: \"100%\",\n        textAlign: \"center\",\n        height: \"100%\",\n        display: \"flex\",\n        alignItems: \"center\",\n        justifyContent: \"center\",\n      }}\n    >\n      {textChars.map((char, i) => {\n        const delay = i * delayPerChar;\n        const colorIndex = i % currentColors.length;\n\n        const opacity = spring({\n          frame: frame - delay,\n          fps,\n          from: 0,\n          to: 1,\n          config: {\n            mass: 0.3,\n            damping: 8,\n            stiffness: 100,\n          },\n        });\n\n        const scale = spring({\n          frame: frame - delay,\n          fps,\n          from: 0,\n          to: 1,\n          config: {\n            mass: 0.4,\n            damping: 7,\n            stiffness: 150,\n          },\n        });\n\n        return (\n          <span\n            key={i}\n            style={{\n              display: \"inline-block\",\n              opacity,\n              color: currentColors[colorIndex],\n              fontSize: fontSizeProp,\n              fontWeight: fontWeightProp,\n              transform: `scale(${scale})`,\n            }}\n          >\n            {char === \" \" ? \"\\u00A0\" : char}\n          </span>\n        );\n      })}\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ]
+}

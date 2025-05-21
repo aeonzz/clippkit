@@ -585,5 +585,21 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: []
     },
+    "popping-text": {
+      name: "popping-text",
+      description: "",
+      type: "registry:component",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/popping-text.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/popping-text.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
   },
 }

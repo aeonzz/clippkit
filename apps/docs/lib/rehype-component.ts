@@ -60,7 +60,10 @@ export function rehypeComponent() {
             );
             source = source.replaceAll("export default", "export");
 
-            source = source.replaceAll(/from\s+["']([^"']+)\.js["']/g, 'from "$1"');
+            source = source.replaceAll(
+              /from\s+["']([^"']+)\.js["']/g,
+              'from "$1"'
+            );
 
             // Add code as children so that rehype can take over at build time.
             node.children?.push(
@@ -124,7 +127,10 @@ export function rehypeComponent() {
             );
             source = source.replaceAll("export default", "export");
 
-            source = source.replaceAll(/from\s+["']([^"']+)\.js["']/g, 'from "$1"');
+            source = source.replaceAll(
+              /from\s+["']([^"']+)\.js["']/g,
+              'from "$1"'
+            );
 
             // Add code as children so that rehype can take over at build time.
             node.children?.push(
@@ -180,7 +186,10 @@ export function rehypeComponent() {
             );
             source = source.replaceAll("export default", "export");
 
-            source = source.replaceAll(/from\s+["']([^"']+)\.js["']/g, 'from "$1"');
+            source = source.replaceAll(
+              /from\s+["']([^"']+)\.js["']/g,
+              'from "$1"'
+            );
 
             // Add code as children so that rehype can take over at build time.
             node.children?.push(
