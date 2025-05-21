@@ -617,6 +617,22 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: []
     },
+    "card-flip-demo": {
+      name: "card-flip-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/examples/card-flip-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/card-flip-demo.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
     "popping-text": {
       name: "popping-text",
       description: "",
@@ -660,6 +676,22 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/ui/typing-text.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "card-flip": {
+      name: "card-flip",
+      description: "",
+      type: "registry:component",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/card-flip.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/card-flip.tsx")),
       source: "",
       category: "",
       subcategory: "",

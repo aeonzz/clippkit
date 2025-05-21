@@ -41,4 +41,14 @@ export const examples: Registry = [
       },
     ],
   },
+  {
+    name: "card-flip-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/card-flip-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

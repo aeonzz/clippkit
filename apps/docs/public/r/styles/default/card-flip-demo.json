@@ -1,0 +1,12 @@
+{
+  "name": "card-flip-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/card-flip-demo.tsx",
+      "content": "import { Player } from \"@remotion/player\";\n\nimport CardFlip from \"../ui/card-flip\";\n\nexport default function CardFlipDemo() {\n  const cardFlipProps = {\n    frontText: \"Hello!\",\n    backText: \"Remotion!\",\n    frontTextColor: \"#FFFFFF\",\n    backTextColor: \"#FFFFFF\",\n    frontBackgroundColor: \"linear-gradient(45deg, #6d28d9, #be185d)\",\n    backBackgroundColor: \"linear-gradient(45deg, #be185d, #6d28d9)\",\n    fontSize: \"2rem\",\n    width: \"280px\", // Slightly smaller for demo\n    height: \"380px\", // Slightly smaller for demo\n    borderRadius: \"15px\",\n    durationInFrames: 90, // Slower flip for demo\n    damping: 15,\n    mass: 0.5,\n    stiffness: 80,\n  };\n\n  return (\n    <Player\n      component={CardFlip}\n      inputProps={cardFlipProps}\n      durationInFrames={120} // Total duration of the player timeline\n      compositionWidth={480}\n      compositionHeight={320} // Adjusted for card aspect ratio\n      fps={30}\n      style={{\n        width: \"100%\",\n        height: \"100%\",\n      }}\n      autoPlay\n      controls\n      loop\n    />\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

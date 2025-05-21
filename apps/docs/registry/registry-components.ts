@@ -31,4 +31,14 @@ export const components: Registry = [
       },
     ],
   },
+  {
+    name: "card-flip",
+    type: "registry:component",
+    files: [
+      {
+        path: "ui/card-flip.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 ];
