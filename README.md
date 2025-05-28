@@ -1,6 +1,8 @@
-# Clippkit – The Component Library for Video Creation
+# Clippkit
 
 ![Clippkit OG Image](https://clippkit.com/og.png)
+
+## Overview
 
 **Clippkit** is a growing collection of reusable components for people building videos with [Remotion](https://remotion.dev). It's like a UI library — but instead of buttons and modals, you get intros, text effects, animations, transitions, and full video scenes.
 
