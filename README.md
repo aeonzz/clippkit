@@ -1,12 +1,14 @@
 # Clippkit – The Component Library for Video Creation
 
+![Clippkit OG Image](https://clippkit.com/@og.png)
+
 **Clippkit** is a growing collection of reusable components for people building videos with [Remotion](https://remotion.dev). It's like a UI library — but instead of buttons and modals, you get intros, text effects, animations, transitions, and full video scenes.
 
 If you're building videos in code, Clippkit gives you a head start. Each component is built with flexibility in mind and is easy to drop into any Remotion project.
 
 ---
 
-## What It’s For
+## What It's For
 
 Clippkit is for developers who want to:
 
@@ -15,13 +17,13 @@ Clippkit is for developers who want to:
 - Assemble entire scenes without starting from scratch
 - Save time without sacrificing design
 
-You’re not locked into anything — everything is unstyled by default and customisable with Tailwind CSS or your own system.
+You're not locked into anything — everything is unstyled by default and customisable with Tailwind CSS or your own system.
 
 ---
 
 ## Built for Remotion
 
-Clippkit isn’t a video editor or video framework. It’s just a library of clean, reusable pieces designed specifically for use with Remotion.
+Clippkit isn't a video editor or video framework. It's just a library of clean, reusable pieces designed specifically for use with Remotion.
 
 You still write your video logic in React. Clippkit just helps you move faster with a set of pre-built building blocks you can tweak, remix, and reuse.
 
@@ -36,7 +38,7 @@ Some of the things you'll find (and can copy/paste) include:
 - Loading indicators, blur overlays, branded transitions
 - Utilities for timing and layout in video space
 
-We’re adding more as we go — and the goal is to keep everything lightweight, flexible, and easy to override.
+We're adding more as we go — and the goal is to keep everything lightweight, flexible, and easy to override.
 
 ---
 
@@ -64,7 +66,7 @@ Clippkit is a monorepo built with [Turborepo](https://turbo.build):
 
 If you're using Clippkit in something public or commercial, a small credit helps others discover it:
 
-> “Built using [Clippkit](https://clippkit.com) by [RVE](https://github.com/reactvideoeditor)”
+> "Built using [Clippkit](https://clippkit.com) by [RVE](https://github.com/reactvideoeditor)"
 
 Totally optional — no license police here.
 
