@@ -39,7 +39,7 @@ export default function HomePage() {
             </div>
             <div>
               <Link
-                href="/docs/ui/text-elements/popping-text"
+                href="/docs/ui/audio-waveforms/circular-waveform"
                 prefetch
                 className={cn(
                   buttonVariants({ variant: "outline" }),
