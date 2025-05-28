@@ -76,4 +76,4 @@ Totally optional — no license police here.
 
 ## Maintained by RVE
 
-Clippkit is built and maintained by [React Video Editor](https://reactvideoeditor.com), a toolkit for building video apps with code.
+Clippkit is built and maintained by [React Video Editor](https://reactvideoeditor.com).
