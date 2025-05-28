@@ -5,12 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build && next-sitemap",
+    "build": "next build && next-sitemap --config next-sitemap.config.cjs",
     "start": "next start",
     "lint": "next lint",
     "postinstall": "fumadocs-mdx",
     "build:registry": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts",
-    "sitemap": "next-sitemap"
+    "sitemap": "next-sitemap --config next-sitemap.config.cjs"
   },
   "dependencies": {
     "@base-ui-components/react": "1.0.0-alpha.8",
