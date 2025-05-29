@@ -11,59 +11,130 @@
 
 "use client";
 
-import React from "react";
-import { random, useCurrentFrame, useVideoConfig } from "remotion";
+import React, { useEffect, useState } from "react";
+import {
+  createSmoothSvgPath,
+  MediaUtilsAudioData,
+  visualizeAudioWaveform,
+} from "@remotion/media-utils";
+import { useCurrentFrame, useVideoConfig } from "remotion";
+
+// Helper function to generate waveform samples
+const generateWaveformSamples = (
+  audioData: MediaUtilsAudioData | null | undefined,
+  numberOfSamples: number,
+  frame: number,
+  waveSpeed: number,
+  fps: number
+): number[] => {
+  if (audioData) {
+    return visualizeAudioWaveform({
+      fps,
+      frame,
+      audioData,
+      numberOfSamples,
+      windowInSeconds: 1 / fps, // Visualize a single frame's worth of audio
+    });
+  }
+  return Array(numberOfSamples)
+    .fill(0)
+    .map((_, i) => {
+      return (
+        Math.sin(frame / waveSpeed + (i / numberOfSamples) * 2 * Math.PI) *
+          0.5 +
+        0.5
+      );
+    });
+};
+
+// Helper function to calculate SVG path from samples
+const calculateSvgPath = (
+  samples: number[],
+  finalWidth: number,
+  finalHeight: number,
+  waveAmplitude: number,
+  strokeWidth: number,
+  numberOfSamples: number
+): string => {
+  const points = samples.map((sample, i) => {
+    const x = (i / Math.max(1, numberOfSamples - 1)) * finalWidth;
+    let y = Math.round((sample - 0.5) * waveAmplitude + finalHeight / 2);
+    y = Math.max(strokeWidth / 2, Math.min(finalHeight - strokeWidth / 2, y));
+    return { x, y };
+  });
+
+  if (points.length > 1) {
+    return createSmoothSvgPath({ points }) as string;
+  }
+  if (points.length === 1) {
+    return `M 0 ${points[0].y} L ${finalWidth} ${points[0].y}`;
+  }
+  return "";
+};
 
 interface LinearWaveformProps {
-  barCount?: number;
-  barWidth?: number;
-  barGap?: number;
-  barColor?: string;
-  barBorderRadius?: string;
+  audioData?: MediaUtilsAudioData | null;
+  numberOfSamples?: number;
+  strokeColor?: string;
+  strokeWidth?: number;
+  fillColor?: string;
   waveAmplitude?: number;
   waveSpeed?: number;
-  randomness?: number;
   containerStyle?: React.CSSProperties;
-  barStyle?: React.CSSProperties;
-  barShadow?: string;
   height?: string | number;
   width?: string | number;
 }
 
 export default function LinearWaveform({
-  barCount = 40,
-  barWidth = 12,
-  barGap = 4,
-  barColor = "var(--foreground)",
-  barBorderRadius = "2px",
+  audioData,
+  numberOfSamples = 64,
+  strokeColor = "var(--foreground)",
+  strokeWidth = 2,
+  fillColor = "none",
   waveAmplitude = 100,
   waveSpeed = 10,
-  randomness = 50,
   containerStyle,
-  barStyle,
-  barShadow = "none",
   height: propHeight,
   width: propWidth,
 }: LinearWaveformProps) {
   const frame = useCurrentFrame();
-  const { width: videoWidth, height: videoHeight } = useVideoConfig();
+  const { width: videoWidth, height: videoHeight, fps } = useVideoConfig();
 
-  const bars = Array.from({ length: barCount }).map((_, i) => {
-    const seed = i * 1000; // Keep seed somewhat unique per bar for consistent randomness
-    const dynamicHeight =
-      Math.abs(Math.sin(frame / waveSpeed + i / (barCount / Math.PI))) *
-        waveAmplitude +
-      random(seed) * randomness;
+  const finalWidth = typeof propWidth === "number" ? propWidth : videoWidth;
+  const finalHeight = typeof propHeight === "number" ? propHeight : videoHeight;
 
-    return {
-      height: Math.max(5, dynamicHeight), // Ensure a minimum height for visibility
-      // Hue can be dynamic or fixed based on props if needed later
-      // hue: (i / barCount) * 180 + frame,
-    };
-  });
+  const [svgPath, setSvgPath] = useState("");
 
-  const finalWidth = propWidth ?? videoWidth;
-  const finalHeight = propHeight ?? videoHeight;
+  useEffect(() => {
+    const waveformData = generateWaveformSamples(
+      audioData,
+      numberOfSamples,
+      frame,
+      waveSpeed,
+      fps
+    );
+
+    const newPath = calculateSvgPath(
+      waveformData,
+      finalWidth,
+      finalHeight,
+      waveAmplitude,
+      strokeWidth,
+      numberOfSamples
+    );
+
+    setSvgPath(newPath);
+  }, [
+    frame,
+    audioData,
+    numberOfSamples,
+    waveAmplitude,
+    waveSpeed,
+    finalWidth,
+    finalHeight,
+    fps,
+    strokeWidth,
+  ]);
 
   return (
     <div
@@ -73,26 +144,27 @@ export default function LinearWaveform({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        gap: `${barGap}px`,
         overflow: "hidden",
         backgroundColor: "transparent",
         ...containerStyle,
       }}
     >
-      {bars.map((bar, i) => (
-        <div
-          key={i}
-          style={{
-            width: `${barWidth}px`,
-            height: `${bar.height}px`,
-            backgroundColor: barColor,
-            borderRadius: barBorderRadius,
-            transition: "height 0.05s ease-out", // Smoother transition
-            boxShadow: barShadow,
-            ...barStyle,
-          }}
+      <svg
+        viewBox={`0 0 ${finalWidth} ${finalHeight}`}
+        width={finalWidth}
+        height={finalHeight}
+        style={{
+          width: finalWidth,
+          height: finalHeight,
+        }}
+      >
+        <path
+          d={svgPath}
+          stroke={strokeColor}
+          strokeWidth={strokeWidth}
+          fill={fillColor}
         />
-      ))}
+      </svg>
     </div>
   );
 }

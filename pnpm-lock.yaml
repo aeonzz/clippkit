@@ -35,9 +35,12 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.1.8
         version: 1.2.6(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@remotion/media-utils':
+        specifier: ^4.0.311
+        version: 4.0.311(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@remotion/player':
-        specifier: latest
-        version: 4.0.298(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: ^4.0.311
+        version: 4.0.311(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@shikijs/compat':
         specifier: ^2.5.0
         version: 2.5.0
@@ -99,8 +102,8 @@ importers:
         specifier: ^6.0.0
         version: 6.0.0
       remotion:
-        specifier: latest
-        version: 4.0.298(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: ^4.0.311
+        version: 4.0.311(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -1431,8 +1434,14 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
-  '@remotion/player@4.0.298':
-    resolution: {integrity: sha512-d4jGpvsGQFw9bK4onCOxb1Ez55nDj81E28WJGv5KaHTU/NG4Qu7lWpw2a6kyIr0zJZlhVZw9i60iz/dkp4QYLA==}
+  '@remotion/media-utils@4.0.311':
+    resolution: {integrity: sha512-G0aWexPFyfzkUL+58ir3kuaqNGLVs8mfW0tmJ4TzaIZfxfoeOaJ9ZRSZn2mJ2Ycaeo1qaidNZYYb7OauJloZFg==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
+  '@remotion/player@4.0.311':
+    resolution: {integrity: sha512-vUT4keHqXUtO6JXRdXxh+Gg5LksWmObdXQFSoCPiSiZ+3hEhrusEodRR0x9EdaOifCREZRrPzWv4DrfihvC5Ow==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -3746,8 +3755,8 @@ packages:
   remark@15.0.1:
     resolution: {integrity: sha512-Eht5w30ruCXgFmxVUSlNWQ9iiimq07URKeFS3hNc8cUWy1llX4KDWfyEDZRycMc+znsN9Ux5/tJ/BFdgdOwA3A==}
 
-  remotion@4.0.298:
-    resolution: {integrity: sha512-COuhJRkv97yTrw6VBFZ4Bi0mTCVrSN7AAg6IQvZTM2r4Wzt0ba894LNGhOh8thPy04FjwIBx45qYzYb3W5otAA==}
+  remotion@4.0.311:
+    resolution: {integrity: sha512-61YsTXL8xaXWW+f4aBF3HKaeK55qofLlNGPBtqrPaXOV5Vk56DucsBS78zRpcnrX/2HN98kqITW0g+VGZpt/4g==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -5490,11 +5499,17 @@ snapshots:
     dependencies:
       react: 19.0.0
 
-  '@remotion/player@4.0.298(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@remotion/media-utils@4.0.311(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
-      remotion: 4.0.298(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      remotion: 4.0.311(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+
+  '@remotion/player@4.0.311(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+      remotion: 4.0.311(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
   '@rollup/pluginutils@5.1.4':
     dependencies:
@@ -8449,7 +8464,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  remotion@4.0.298(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  remotion@4.0.311(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
