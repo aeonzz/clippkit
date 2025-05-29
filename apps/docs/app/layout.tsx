@@ -58,9 +58,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: siteConfig.url,
-  },
   openGraph: {
     type: "website",
     locale: "en_US",
