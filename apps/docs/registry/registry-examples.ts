@@ -121,4 +121,14 @@ export const examples: Registry = [
       },
     ],
   },
+  {
+    name: "screen-loader-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/screen-loader-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

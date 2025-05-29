@@ -111,4 +111,14 @@ export const components: Registry = [
       },
     ],
   },
+  {
+    name: "screen-loader",
+    type: "registry:component",
+    files: [
+      {
+        path: "ui/screen-loader.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 ];

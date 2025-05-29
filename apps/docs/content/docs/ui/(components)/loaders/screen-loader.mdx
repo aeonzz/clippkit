@@ -1,0 +1,124 @@
+---
+title: Screen Loader
+description: A loader animation that travels around the border of its container.
+component: true
+radix:
+  source: ui/screen-loader.tsx
+  demo: examples/screen-loader-demo.tsx
+preview: true
+---
+
+A component that displays a small square animating along the perimeter of its parent container.
+
+<ComponentTabs name="screen-loader-demo" />
+
+## Installation
+
+### CLI
+
+<Callout title="COMING SOON" type="warn">
+  Installation via `npx shadcnui install clipkittt@screen-loader` isn't quite ready yet.
+  For now, please follow the manual installation instructions.
+
+Eventually users will be able to run the following command:
+
+      ```package-install
+    npx shadcn@latest add "https://clippkit/r/screen-loader"
+    ```
+
+</Callout>
+
+### Manual
+
+<Steps>
+  <Step>
+    Create a new file, for example, at `src/components/screen-loader.tsx` (or your
+    preferred location) and paste the component code into it. You can find the
+    component code in the `apps/docs/registry/default/ui/screen-loader.tsx` file or
+    by clicking the "Source" tab above.
+  </Step>
+
+  <Step>
+    Update the import paths in your Remotion compositions if you placed the file
+    in a different location than shown in the usage examples.
+  </Step>
+</Steps>
+
+## Usage
+
+Once the `ScreenLoader` component is added to your project, you can integrate it into your Remotion compositions. The `ScreenLoader` requires a parent container with specific dimensions and `position: relative` for it to animate correctly along its border.
+
+<Callout title="Prerequisite">
+  Ensure you have a Remotion project set up. If not, please refer to the
+  [Remotion documentation](https://www.remotion.dev/docs/) to get started.
+</Callout>
+
+**Define a Composition:**
+
+In your Remotion project's entry file (commonly `src/Root.tsx` or `src/index.ts`), import `ScreenLoader` and define a `Composition`. You'll need to wrap `ScreenLoader` in a container that provides the `containerWidth` and `containerHeight` dimensions.
+
+```tsx title="src/main.tsx (or equivalent)"
+import React from "react"; // Needed for JSX
+import { Composition } from "remotion";
+
+import ScreenLoader from "./ui/screen-loader"; // Adjust path as needed
+
+// Wrapper component to provide context for ScreenLoader
+const MyScreenLoaderScene: React.FC = () => {
+  const sceneWidth = 500;
+  const sceneHeight = 300;
+
+  return (
+    <div
+      style={{
+        width: sceneWidth,
+        height: sceneHeight,
+        position: "relative", // Important for ScreenLoader positioning
+        border: "1px solid black", // Optional: visualize the container
+        margin: "auto", // Center in Remotion player if it's larger
+        display: "flex", // Ensure it takes up specified width/height
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "lightgray",
+      }}
+    >
+      <ScreenLoader
+        containerWidth={sceneWidth}
+        containerHeight={sceneHeight}
+        loaderSize={30}
+        loaderColor="#007bff" // A nice blue
+        durationInFrames={180} // 6 seconds at 30fps
+      />
+      {/* You can add other content inside this container too */}
+      <p style={{ position: "absolute", color: "black" }}>Loading Content...</p>
+    </div>
+  );
+};
+
+export const MyComposition = () => {
+  return (
+    <Composition
+      id="ScreenLoaderScene"
+      component={MyScreenLoaderScene} // Use the wrapper
+      durationInFrames={200} // Longer than loader to see full loop if needed
+      fps={30}
+      width={600} // Player dimensions, can be larger than scene
+      height={400}
+      // No defaultProps needed here as MyScreenLoaderScene defines them
+    />
+  );
+};
+```
+
+## API Reference
+
+The `ScreenLoader` component accepts the following props:
+
+| Prop               | Type      | Default      | Description                                                                                                      |
+| ------------------ | --------- | ------------ | ---------------------------------------------------------------------------------------------------------------- |
+| `loaderSize`       | `number`  | `20`         | The size (width and height) of the moving square loader in pixels.                                               |
+| `loaderColor`      | `string`  | `"blue"`     | The background color of the loader.                                                                              |
+| `containerWidth`   | `number`  | **Required** | The width of the container within which the loader will animate. The loader moves along the border of this area. |
+| `containerHeight`  | `number`  | **Required** | The height of the container within which the loader will animate.                                                |
+| `durationInFrames` | `number`  | `120`        | The total number of frames for one complete loop of the loader around the container.                             |
+| `loop`             | `boolean` | `true`       | If `true`, the loader animation will loop indefinitely. If `false`, it will play once.                           |

@@ -745,6 +745,22 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: []
     },
+    "screen-loader-demo": {
+      name: "screen-loader-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/examples/screen-loader-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/screen-loader-demo.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
     "popping-text": {
       name: "popping-text",
       description: "",
@@ -916,6 +932,22 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/ui/circular-waveform.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "screen-loader": {
+      name: "screen-loader",
+      description: "",
+      type: "registry:component",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/screen-loader.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/screen-loader.tsx")),
       source: "",
       category: "",
       subcategory: "",
