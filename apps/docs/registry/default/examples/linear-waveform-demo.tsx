@@ -36,14 +36,13 @@ export default function LinearWaveformDemo() {
 
   const linearWaveformProps = React.useMemo(
     () => ({
-      numberOfSamples: 28,
+      numberOfSamples: 108,
       strokeColor: "var(--foreground)",
-      strokeWidth: 3,
+      strokeWidth: 2,
       fillColor: "none",
       waveAmplitude: 100,
       waveSpeed: 3,
       audioData,
-      height: "10%",
     }),
     [audioData]
   );
