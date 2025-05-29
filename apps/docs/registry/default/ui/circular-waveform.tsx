@@ -12,39 +12,51 @@
 "use client";
 
 import React from "react";
+import {
+  MediaUtilsAudioData,
+  visualizeAudioWaveform,
+} from "@remotion/media-utils";
 import { random, useCurrentFrame, useVideoConfig } from "remotion";
 
 interface CircularWaveformProps {
+  audioData?: MediaUtilsAudioData | null;
   barCount?: number;
   barWidth?: number;
   barColor?: string;
   waveAmplitude?: number;
-  waveSpeed?: number;
-  randomness?: number;
   radius?: number;
   centerOffset?: { x?: number; y?: number };
   containerStyle?: React.CSSProperties;
   barStyle?: React.CSSProperties;
   height?: string | number;
   width?: string | number;
+  barMinHeight?: number;
+  strokeLinecap?: "butt" | "round" | "square";
+  transitionDuration?: string;
+  transitionTimingFunction?: string;
+  rotationOffset?: number;
 }
 
 export default function CircularWaveform({
+  audioData,
   barCount = 60,
   barWidth = 5,
   barColor = "var(--foreground)",
   waveAmplitude = 50,
-  waveSpeed = 10,
-  randomness = 30,
   radius = 100,
   centerOffset = { x: 0, y: 0 },
   containerStyle,
   barStyle,
   height: propHeight,
   width: propWidth,
+  barMinHeight = 5,
+  strokeLinecap = "butt",
+  transitionDuration = "0.05s",
+  transitionTimingFunction = "ease-out",
+  rotationOffset = 0,
 }: CircularWaveformProps) {
   const frame = useCurrentFrame();
-  const { width: videoWidth, height: videoHeight } = useVideoConfig();
+  const { width: videoWidth, height: videoHeight, fps } = useVideoConfig();
 
   const finalWidth = propWidth ?? videoWidth;
   const finalHeight = propHeight ?? videoHeight;
@@ -60,27 +72,45 @@ export default function CircularWaveform({
       : parseFloat(String(finalHeight).replace("px", "")) / 2) +
     (centerOffset.y ?? 0);
 
-  const bars = Array.from({ length: barCount }).map((_, i) => {
-    const seed = i * 1000;
-    const angle = (i / barCount) * 2 * Math.PI;
-    const dynamicHeight = Math.max(
-      5,
-      Math.abs(Math.sin(frame / waveSpeed + i / (barCount / (2 * Math.PI)))) *
-        waveAmplitude +
-        random(seed) * randomness
-    );
+  const waveformSamples = audioData
+    ? visualizeAudioWaveform({
+        fps,
+        frame,
+        audioData,
+        numberOfSamples: barCount,
+        windowInSeconds: 1 / fps,
+      })
+    : Array(barCount)
+        .fill(0)
+        .map((_, i) => {
+          const seed = i * 1000;
+          return (
+            Math.max(
+              0.1,
+              Math.abs(Math.sin(frame / 10 + i / (barCount / (2 * Math.PI)))) +
+                random(seed) * 0.3
+            ) *
+              0.5 +
+            0.25
+          );
+        });
 
-    const x1 = centerX + radius * Math.cos(angle);
-    const y1 = centerY + radius * Math.sin(angle);
-    const x2 = centerX + (radius + dynamicHeight) * Math.cos(angle);
-    const y2 = centerY + (radius + dynamicHeight) * Math.sin(angle);
+  const bars = waveformSamples.map((sample, i) => {
+    const angleRad =
+      (i / barCount) * 2 * Math.PI + (rotationOffset * Math.PI) / 180;
+    const dynamicHeight = Math.max(barMinHeight, sample * waveAmplitude);
+
+    const x1 = centerX + radius * Math.cos(angleRad);
+    const y1 = centerY + radius * Math.sin(angleRad);
+    const x2 = centerX + (radius + dynamicHeight) * Math.cos(angleRad);
+    const y2 = centerY + (radius + dynamicHeight) * Math.sin(angleRad);
 
     return {
       x1,
       y1,
       x2,
       y2,
-      height: dynamicHeight, // Not directly used for line, but for potential bar representation
+      height: dynamicHeight,
     };
   });
 
@@ -94,7 +124,7 @@ export default function CircularWaveform({
         justifyContent: "center",
         overflow: "hidden",
         backgroundColor: "transparent",
-        position: "relative", // Needed for absolute positioning of bars if we switch to div bars
+        position: "relative",
         ...containerStyle,
       }}
     >
@@ -108,9 +138,12 @@ export default function CircularWaveform({
             y2={bar.y2}
             stroke={barColor}
             strokeWidth={barWidth}
+            strokeLinecap={strokeLinecap}
             style={{
-              transition: "all 0.05s ease-out",
-              ...barStyle, // Note: some CSS properties might not apply to SVG elements directly
+              transitionProperty: "all",
+              transitionDuration: transitionDuration,
+              transitionTimingFunction: transitionTimingFunction,
+              ...barStyle,
             }}
           />
         ))}

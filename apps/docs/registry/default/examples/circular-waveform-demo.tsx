@@ -1,24 +1,65 @@
+import React from "react"; // Import React
+import { MediaUtilsAudioData, useAudioData } from "@remotion/media-utils";
 import { Player } from "@remotion/player";
+import { Audio } from "remotion"; // Import Audio
 
 import CircularWaveform from "../ui/circular-waveform";
 
+// Media source for the demo
+const MEDIA_SRC =
+  "https://rwxrdxvxndclnqvznxfj.supabase.co/storage/v1/object/public/sounds//moon-landing.mp3";
+
+// Define props for the new composition component
+interface AudioCircularWaveformCompositionProps {
+  circularWaveformProps: Omit<
+    React.ComponentProps<typeof CircularWaveform>,
+    "audioData"
+  > & { audioData?: MediaUtilsAudioData | null };
+  mediaSrc: string;
+}
+
+// New component combining CircularWaveform and Audio
+const AudioCircularWaveformComposition: React.FC<
+  AudioCircularWaveformCompositionProps
+> = ({ circularWaveformProps, mediaSrc }) => {
+  return (
+    <>
+      <CircularWaveform {...circularWaveformProps} />
+      <Audio src={mediaSrc} />
+    </>
+  );
+};
+
 export default function CircularWaveformDemo() {
-  const circularWaveformProps = {
-    barCount: 80,
-    barWidth: 2,
-    waveAmplitude: 10,
-    waveSpeed: 8,
-    randomness: 30,
-    radius: 100,
-    // Explicitly set height and width for the demo player if needed
-    // otherwise it will use videoConfig dimensions
-  };
+  const audioData = useAudioData(MEDIA_SRC);
+
+  const circularWaveformProps = React.useMemo(
+    () => ({
+      barCount: 180,
+      barWidth: 2,
+      waveAmplitude: 100,
+      radius: 100,
+      audioData,
+      strokeLinecap: "round" as const,
+      barMinHeight: 2,
+      transitionDuration: "0.1s",
+      transitionTimingFunction: "ease-in-out",
+      rotationOffset: 45,
+      barColor: "var(--foreground)",
+    }),
+    [audioData]
+  );
+
+  // Calculate duration in frames for the player for better readability
+  const playerDurationInFrames = audioData
+    ? Math.floor(audioData.durationInSeconds * 30)
+    : 300;
 
   return (
     <Player
-      component={CircularWaveform}
-      inputProps={circularWaveformProps}
-      durationInFrames={300} // e.g., 10 seconds at 30fps
+      component={AudioCircularWaveformComposition} // Use the new component
+      inputProps={{ circularWaveformProps, mediaSrc: MEDIA_SRC }} // Pass props directly
+      durationInFrames={playerDurationInFrames} // e.g., 10 seconds at 30fps
       compositionWidth={640}
       compositionHeight={360} // 16:9 aspect ratio
       fps={30}
@@ -27,9 +68,8 @@ export default function CircularWaveformDemo() {
         height: "100%", // Player will scale to fit its container
         backgroundColor: "transparent",
       }}
-      autoPlay
       controls // Show player controls
-      loop // Loop the animation
+      loop
     />
   );
 }
