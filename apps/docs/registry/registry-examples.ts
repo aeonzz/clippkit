@@ -102,6 +102,16 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "circular-loader-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/circular-loader-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "circular-waveform-demo",
     type: "registry:example",
     files: [

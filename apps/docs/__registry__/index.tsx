@@ -713,6 +713,22 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: []
     },
+    "circular-loader-demo": {
+      name: "circular-loader-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/examples/circular-loader-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/circular-loader-demo.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
     "circular-waveform-demo": {
       name: "circular-waveform-demo",
       description: "",
@@ -868,6 +884,22 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/ui/bar-loader.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "circular-loader": {
+      name: "circular-loader",
+      description: "",
+      type: "registry:component",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/circular-loader.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/circular-loader.tsx")),
       source: "",
       category: "",
       subcategory: "",

@@ -92,6 +92,16 @@ export const components: Registry = [
     ],
   },
   {
+    name: "circular-loader",
+    type: "registry:component",
+    files: [
+      {
+        path: "ui/circular-loader.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
     name: "circular-waveform",
     type: "registry:component",
     files: [

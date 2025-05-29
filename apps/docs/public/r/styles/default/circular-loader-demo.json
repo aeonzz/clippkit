@@ -1,0 +1,12 @@
+{
+  "name": "circular-loader-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/circular-loader-demo.tsx",
+      "content": "import React from \"react\";\nimport { Player } from \"@remotion/player\";\n\nimport CircularLoader from \"../ui/circular-loader\";\n\n// Define props for the new composition component\ninterface CircularLoaderCompositionProps {\n  circularLoaderProps: React.ComponentProps<typeof CircularLoader>;\n}\n\n// New component combining CircularLoader\nconst CircularLoaderComposition: React.FC<CircularLoaderCompositionProps> = ({\n  circularLoaderProps,\n}) => {\n  return (\n    <div\n      style={{\n        width: \"100%\",\n        height: \"100%\",\n        display: \"flex\",\n        justifyContent: \"center\",\n        alignItems: \"center\",\n      }}\n    >\n      <CircularLoader {...circularLoaderProps} />\n    </div>\n  );\n};\n\nexport default function CircularLoaderDemo() {\n  const circularLoaderProps = React.useMemo(\n    () => ({\n      loadingText: \"Loading...\",\n      circleColor: \"var(--primary)\",\n      textColor: \"var(--primary)\",\n      size: 120,\n      strokeWidth: 8,\n      trackColor: \"var(--muted)\",\n      hideText: false,\n      speed: 1.2,\n    }),\n    []\n  );\n\n  const playerDurationInFrames = 150; // 5 seconds at 30fps\n\n  return (\n    <Player\n      component={CircularLoaderComposition}\n      inputProps={{ circularLoaderProps }}\n      durationInFrames={playerDurationInFrames}\n      compositionWidth={640}\n      compositionHeight={360}\n      fps={30}\n      style={{\n        width: \"100%\",\n        height: \"100%\",\n        backgroundColor: \"transparent\",\n      }}\n      controls\n      loop\n    />\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}
