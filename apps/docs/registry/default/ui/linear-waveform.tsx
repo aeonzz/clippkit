@@ -100,8 +100,34 @@ export default function LinearWaveform({
   const frame = useCurrentFrame();
   const { width: videoWidth, height: videoHeight, fps } = useVideoConfig();
 
-  const finalWidth = typeof propWidth === "number" ? propWidth : videoWidth;
-  const finalHeight = typeof propHeight === "number" ? propHeight : videoHeight;
+  let computedWidth: number;
+  if (typeof propWidth === "number") {
+    computedWidth = propWidth;
+  } else if (typeof propWidth === "string" && propWidth.endsWith("%")) {
+    const percentage = parseFloat(propWidth.substring(0, propWidth.length - 1));
+    computedWidth = !isNaN(percentage)
+      ? (percentage / 100) * videoWidth
+      : videoWidth;
+  } else {
+    computedWidth = videoWidth;
+  }
+
+  let computedHeight: number;
+  if (typeof propHeight === "number") {
+    computedHeight = propHeight;
+  } else if (typeof propHeight === "string" && propHeight.endsWith("%")) {
+    const percentage = parseFloat(
+      propHeight.substring(0, propHeight.length - 1)
+    );
+    computedHeight = !isNaN(percentage)
+      ? (percentage / 100) * videoHeight
+      : videoHeight;
+  } else {
+    computedHeight = videoHeight;
+  }
+
+  const finalWidth = computedWidth;
+  const finalHeight = computedHeight;
 
   const [svgPath, setSvgPath] = useState("");
 

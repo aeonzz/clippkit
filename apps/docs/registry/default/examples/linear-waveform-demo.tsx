@@ -24,10 +24,18 @@ const AudioWaveformComposition: React.FC<AudioWaveformCompositionProps> = ({
   mediaSrc,
 }) => {
   return (
-    <>
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <LinearWaveform {...linearWaveformProps} />
       <Audio src={mediaSrc} />
-    </>
+    </div>
   );
 };
 
@@ -43,6 +51,7 @@ export default function LinearWaveformDemo() {
       waveAmplitude: 100,
       waveSpeed: 3,
       audioData,
+      width: "50%",
     }),
     [audioData]
   );
