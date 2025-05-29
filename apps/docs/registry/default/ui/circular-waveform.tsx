@@ -35,6 +35,7 @@ interface CircularWaveformProps {
   transitionDuration?: string;
   transitionTimingFunction?: string;
   rotationOffset?: number;
+  growOutwardsOnly?: boolean;
 }
 
 export default function CircularWaveform({
@@ -54,6 +55,7 @@ export default function CircularWaveform({
   transitionDuration = "0.05s",
   transitionTimingFunction = "ease-out",
   rotationOffset = 0,
+  growOutwardsOnly = false,
 }: CircularWaveformProps) {
   const frame = useCurrentFrame();
   const { width: videoWidth, height: videoHeight, fps } = useVideoConfig();
@@ -100,17 +102,41 @@ export default function CircularWaveform({
       (i / barCount) * 2 * Math.PI + (rotationOffset * Math.PI) / 180;
     const dynamicHeight = Math.max(barMinHeight, sample * waveAmplitude);
 
-    const x1 = centerX + radius * Math.cos(angleRad);
-    const y1 = centerY + radius * Math.sin(angleRad);
-    const x2 = centerX + (radius + dynamicHeight) * Math.cos(angleRad);
-    const y2 = centerY + (radius + dynamicHeight) * Math.sin(angleRad);
+    let startRadius: number;
+    let endRadius: number;
+
+    if (growOutwardsOnly) {
+      startRadius = radius;
+      endRadius = radius + dynamicHeight;
+    } else {
+      startRadius = radius - dynamicHeight / 2;
+      endRadius = radius + dynamicHeight / 2;
+    }
+
+    if (startRadius < 0) {
+      endRadius += Math.abs(startRadius);
+      startRadius = 0;
+    }
+
+    const maxAllowedRadius = Math.min(centerX, centerY);
+    if (endRadius > maxAllowedRadius) {
+      endRadius = maxAllowedRadius;
+    }
+    if (startRadius > endRadius) {
+      startRadius = endRadius - barMinHeight > 0 ? endRadius - barMinHeight : 0;
+    }
+
+    const finalX1 = centerX + startRadius * Math.cos(angleRad);
+    const finalY1 = centerY + startRadius * Math.sin(angleRad);
+    const finalX2 = centerX + endRadius * Math.cos(angleRad);
+    const finalY2 = centerY + endRadius * Math.sin(angleRad);
 
     return {
-      x1,
-      y1,
-      x2,
-      y2,
-      height: dynamicHeight,
+      x1: finalX1,
+      y1: finalY1,
+      x2: finalX2,
+      y2: finalY2,
+      height: endRadius - startRadius,
     };
   });
 

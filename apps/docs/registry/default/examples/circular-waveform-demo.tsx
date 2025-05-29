@@ -38,7 +38,7 @@ export default function CircularWaveformDemo() {
       barCount: 180,
       barWidth: 2,
       waveAmplitude: 100,
-      radius: 100,
+      radius: 80,
       audioData,
       strokeLinecap: "round" as const,
       barMinHeight: 2,
@@ -46,6 +46,7 @@ export default function CircularWaveformDemo() {
       transitionTimingFunction: "ease-in-out",
       rotationOffset: 45,
       barColor: "var(--foreground)",
+      growOutwardsOnly: true,
     }),
     [audioData]
   );

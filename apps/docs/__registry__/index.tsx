@@ -681,6 +681,22 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: []
     },
+    "bar-waveform-demo": {
+      name: "bar-waveform-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/examples/bar-waveform-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/bar-waveform-demo.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
     "circular-waveform-demo": {
       name: "circular-waveform-demo",
       description: "",
@@ -804,6 +820,22 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/ui/linear-waveform.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "bar-waveform": {
+      name: "bar-waveform",
+      description: "",
+      type: "registry:component",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/bar-waveform.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/bar-waveform.tsx")),
       source: "",
       category: "",
       subcategory: "",

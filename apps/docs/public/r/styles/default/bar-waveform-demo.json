@@ -1,0 +1,12 @@
+{
+  "name": "bar-waveform-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/bar-waveform-demo.tsx",
+      "content": "import React from \"react\";\nimport { MediaUtilsAudioData, useAudioData } from \"@remotion/media-utils\";\nimport { Player } from \"@remotion/player\";\nimport { Audio } from \"remotion\";\n\nimport BarWaveform from \"../ui/bar-waveform\"; // Import BarWaveform\n\n// Media source for the demo\nconst MEDIA_SRC =\n  \"https://rwxrdxvxndclnqvznxfj.supabase.co/storage/v1/object/public/sounds//moon-landing.mp3\";\n\n// Define props for the new composition component\ninterface AudioWaveformCompositionProps {\n  barWaveformProps: Omit<\n    React.ComponentProps<typeof BarWaveform>,\n    \"audioData\"\n  > & { audioData?: MediaUtilsAudioData | null };\n  mediaSrc: string;\n}\n\n// New component combining BarWaveform and Audio\nconst AudioWaveformComposition: React.FC<AudioWaveformCompositionProps> = ({\n  barWaveformProps,\n  mediaSrc,\n}) => {\n  return (\n    <>\n      <BarWaveform {...barWaveformProps} />\n      <Audio src={mediaSrc} />\n    </>\n  );\n};\n\nexport default function BarWaveformDemo() {\n  const audioData = useAudioData(MEDIA_SRC);\n\n  const barWaveformProps = React.useMemo(\n    () => ({\n      numberOfSamples: 50, // Adjusted for bar display\n      barColor: \"var(--foreground)\",\n      barWidth: 7,\n      barGap: 3,\n      waveAmplitude: 120,\n      waveSpeed: 5,\n      audioData,\n      height: \"20%\", // Example height\n      barBorderRadius: 2,\n    }),\n    [audioData]\n  );\n\n  // Calculate duration in frames for the player\n  const playerDurationInFrames = audioData\n    ? Math.floor(audioData.durationInSeconds * 30)\n    : 300;\n\n  return (\n    <Player\n      component={AudioWaveformComposition} // Use the new component\n      inputProps={{ barWaveformProps, mediaSrc: MEDIA_SRC }} // Pass props for AudioWaveformComposition\n      durationInFrames={playerDurationInFrames}\n      compositionWidth={640}\n      compositionHeight={360}\n      fps={30}\n      style={{\n        width: \"100%\",\n        height: \"100%\",\n        backgroundColor: \"transparent\",\n      }}\n      controls\n      loop\n    />\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

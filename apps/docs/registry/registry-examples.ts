@@ -82,6 +82,16 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "bar-waveform-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/bar-waveform-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "circular-waveform-demo",
     type: "registry:example",
     files: [

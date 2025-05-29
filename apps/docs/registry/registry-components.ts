@@ -72,6 +72,16 @@ export const components: Registry = [
     ],
   },
   {
+    name: "bar-waveform",
+    type: "registry:component",
+    files: [
+      {
+        path: "ui/bar-waveform.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
     name: "circular-waveform",
     type: "registry:component",
     files: [
