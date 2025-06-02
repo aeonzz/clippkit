@@ -221,6 +221,7 @@ export const MyVideo: React.FC = () => {
   );
 };
 ```
+````
 
 ## API Reference
 
@@ -255,7 +256,6 @@ export const components: Registry = [
   },
 ];
 ```
-````
 
 **B. Update `apps/docs/registry/registry-examples.ts`:**
 
