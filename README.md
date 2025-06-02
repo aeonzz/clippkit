@@ -1,10 +1,8 @@
-# Clippkit
-
 ![Clippkit OG Image](https://clippkit.com/og.png)
 
 ## Overview
 
-**Clippkit** is a growing collection of reusable components for people building videos with Code ([Remotion](https://remotion.dev)). It's like a UI library — but instead of buttons and modals, you get intros, text effects, animations, transitions, and full video scenes.
+**Clippkit** is a growing collection of reusable components for people building videos with Code ([Remotion](https://remotion.dev)). It's like a UI library, but instead of buttons and modals, you get intros, text effects, animations, transitions, and full video scenes.
 
 If you're building videos in code, Clippkit gives you a head start. Each component is built with flexibility in mind and is easy to drop into any Remotion project.
 
@@ -19,9 +17,11 @@ Clippkit is for developers who want to:
 - Assemble entire scenes without starting from scratch
 - Save time without sacrificing design
 
-You're not locked into anything — everything is unstyled by default and customisable with Tailwind CSS or your own system.
+## You're not locked into anything — everything is unstyled by default and customisable with Tailwind CSS or your own system.
 
----
+## Contributing
+
+Visit our [contributing guide](https://github.com/reactvideoeditor/clippkit/blob/main/CONTRIBUTING.md) to learn how to contribute. It only takes ~5 minutes to add your own!
 
 ## Built for Remotion
 

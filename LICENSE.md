@@ -1,27 +1,21 @@
-# License – Apache 2.0 (Friendly Summary)
+MIT License
 
-Clippkit is open source and free to use under the Apache License 2.0.  
-You’re welcome to use it in personal projects, commercial products, client work — basically wherever you like.
+Copyright (c) Clippkit
 
-Full legal license here:  
-👉 https://www.apache.org/licenses/LICENSE-2.0
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-This means:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-- ✅ You can use it commercially
-- ✅ You can modify it
-- ✅ You don’t need to ask permission
-- ❌ No liability or warranty is provided (standard open-source terms)
-
----
-
-### Attribution (Not required, but appreciated!)
-
-If you're using Clippkit publicly, a small credit would mean a lot.  
-Something like this:
-
-> “Built with [Clippkit](https://clippkit.com) by [RVE](https://github.com/reactvideoeditor)”
-
-No pressure - it’s totally optional, but helps others discover the project.
-
-Thanks for using it!
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
