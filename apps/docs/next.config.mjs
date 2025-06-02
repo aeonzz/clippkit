@@ -12,9 +12,6 @@ const config = {
         destination: "/docs/introduction",
         permanent: false,
       },
-      /**
-       * @see https://github.com/magicuidesign/magicui/blob/main/next.config.mjs
-       */
       {
         source: "/r/index",
         destination: "/r/index.json",

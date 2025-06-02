@@ -7,6 +7,6 @@ export const siteConfig = {
   url: "https://www.clippkit.com/",
   ogImage: "",
   links: {
-    github: "https://github.com/reactvideoeditor",
+    github: "https://github.com/reactvideoeditor/clippkit",
   },
 };
