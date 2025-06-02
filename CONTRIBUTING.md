@@ -55,17 +55,6 @@ To add a new component to Clippkit, follow these steps. We'll use `example-compo
 Create the main component in `apps/docs/registry/default/ui/example-component.tsx`.
 
 ```tsx title="apps/docs/registry/default/ui/example-component.tsx"
-/**
- * Free Remotion Template Component
- * ---------------------------------
- * This template is free to use in your projects!
- * Credit appreciated but not required.
- *
- * Created by the team at https://www.reactvideoeditor.com
- *
- * Happy coding and building amazing videos! 🎉
- */
-
 "use client"; // If applicable for your component
 
 import { spring, useCurrentFrame, useVideoConfig } from "remotion";
@@ -232,7 +221,6 @@ export const MyVideo: React.FC = () => {
   );
 };
 ```
-````
 
 ## API Reference
 
@@ -242,10 +230,6 @@ Document the props your component accepts.
 | ---------- | -------- | -------------- | ------------------------ |
 | `text`     | `string` | "Hello World!" | The text to display.     |
 | `propName` | `Type`   | `defaultValue` | Description of the prop. |
-
-{/_ Add all relevant props _/}
-
-````
 
 ### 4. Update Registry Files
 
@@ -270,6 +254,7 @@ export const components: Registry = [
     ],
   },
 ];
+```
 ````
 
 **B. Update `apps/docs/registry/registry-examples.ts`:**
