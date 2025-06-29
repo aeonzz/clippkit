@@ -1,6 +1,6 @@
 import { Player } from "@remotion/player";
 
-import GlitchText from "../ui/glitch-text";
+import GlitchText from "../components/glitch-text";
 
 export default function GlitchTextDemo() {
   const glitchTextProps = {

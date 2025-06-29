@@ -10,19 +10,9 @@ preview: true
 
 ### CLI
 
-<Callout title="COMING SOON" type="warn">
-  Installation via `npx shadcnui install clipkittt@card-flip` isn't quite ready yet.
-  For now, please follow the manual installation instructions.
-
-Eventually users will be able to run the following command:
-
-      ```package-install
-    npx shadcn@latest add "https://clippkit/r/card-flip"
-    ```
-
-The GitHub task can be [found here.](https://github.com/reactvideoeditor/clippkit/issues/15)
-
-</Callout>
+```package-install
+npx shadcn@latest add "https://clippkit.com/r/glitch-text"
+```
 
 ### Manual
 
@@ -31,26 +21,65 @@ The GitHub task can be [found here.](https://github.com/reactvideoeditor/clippki
     Create a new file, for example, at `src/components/glitch-text.tsx` (or your preferred location) and paste the following code into it.
 
     ```tsx title="src/components/glitch-text.tsx"
-    /**
-     * Free Remotion Template Component
-     * ---------------------------------
-     * This template is free to use in your projects!
-     * Credit appreciated but not required.
-     *
-     * Created by the team at https://www.reactvideoeditor.com
-     *
-     * Happy coding and building amazing videos! 🎉
-     */
-
     "use client";
 
     import { useCurrentFrame } from "remotion";
 
-    export default function GlitchText() {
+    interface GlitchTextProps {
+      text?: string;
+      textColor?: string;
+      glitchTextColor1?: string;
+      glitchTextColor2?: string;
+      glitchTextColor3?: string;
+      fontSize?: string;
+      fontFamily?: string;
+      fontWeight?: string;
+      glitchStrength?: number;
+      glitchSpeed?: number;
+      sporadicGlitchChance?: number;
+    }
+
+    export default function GlitchText({
+      text = "GLITCH",
+      textColor = "white", // Using new CSS variable
+      glitchTextColor1 = "var(--glitch-color-1)", // Using new CSS variable
+      glitchTextColor2 = "var(--glitch-color-2)", // Using new CSS variable
+      fontSize = "5rem",
+      fontFamily = "monospace",
+      fontWeight = "bold",
+      glitchStrength = 10,
+      glitchSpeed = 5,
+      sporadicGlitchChance,
+    }: GlitchTextProps) {
       const frame = useCurrentFrame();
 
-      const glitchIntensity = Math.sin(frame / 10) * 10;
-      const rgbOffset = Math.sin(frame / 5) * 5;
+      let currentGlitchIntensity = 0;
+      let currentRgbOffset = 0;
+
+      if (sporadicGlitchChance !== undefined && sporadicGlitchChance > 0) {
+        // Sporadic glitch logic
+        if (Math.random() < sporadicGlitchChance) {
+          // Glitch happens based on chance
+          // Use glitchSpeed to determine how often a *new* random glitch can occur,
+          // rather than how fast a continuous sine wave moves.
+          // For example, a higher glitchSpeed could mean we only pick new random values less often.
+          // This interpretation might need refinement based on desired effect.
+          // For now, let's make it so that a glitch, when it occurs, has a random intensity.
+          if (
+            frame % Math.max(1, Math.floor(glitchSpeed)) === 0 ||
+            glitchSpeed < 1
+          ) {
+            currentGlitchIntensity = (Math.random() - 0.5) * 2 * glitchStrength; // Random value between -glitchStrength and +glitchStrength
+            currentRgbOffset = (Math.random() - 0.5) * 2 * (glitchStrength / 1.5); // Slightly less offset for RGB
+          }
+        }
+        // Else, no glitch on this frame for sporadic mode
+      } else {
+        // Original continuous glitch logic
+        currentGlitchIntensity = Math.sin(frame / glitchSpeed) * glitchStrength;
+        currentRgbOffset =
+          Math.sin(frame / (glitchSpeed / 2)) * (glitchStrength / 2);
+      }
 
       return (
         <div
@@ -59,32 +88,34 @@ The GitHub task can be [found here.](https://github.com/reactvideoeditor/clippki
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            fontSize: "5rem",
-            fontWeight: "bold",
-            fontFamily: "monospace",
+            fontSize,
+            fontWeight,
+            fontFamily,
           }}
         >
           <div
             style={{
               position: "absolute",
-              color: "cyan",
-              transform: `translate(${rgbOffset}px, ${glitchIntensity}px)`,
-              mixBlendMode: "screen",
+              color: glitchTextColor1,
+              transform: `translate(${currentRgbOffset}px, ${currentGlitchIntensity}px)`,
+              mixBlendMode: "screen", // Consider if 'screen' is desired for B&W
+              opacity: 0.6, // Added opacity for better layering
             }}
           >
-            GLITCH
+            {text}
           </div>
           <div
             style={{
               position: "absolute",
-              color: "magenta",
-              transform: `translate(${-rgbOffset}px, ${-glitchIntensity}px)`,
-              mixBlendMode: "screen",
+              color: glitchTextColor2,
+              transform: `translate(${-currentRgbOffset}px, ${-currentGlitchIntensity}px)`,
+              mixBlendMode: "screen", // Consider if 'screen' is desired for B&W
+              opacity: 0.6, // Added opacity for better layering
             }}
           >
-            GLITCH
+            {text}
           </div>
-          <div style={{ color: "white", opacity: 0.8 }}>GLITCH</div>
+          <div style={{ color: textColor, opacity: 0.8 }}>{text}</div>
         </div>
       );
     }

@@ -14,26 +14,40 @@ icon: Terminal
 
 ---
 
-### How to Use a Component (Manual Setup for Now)
+### CLI Installation (Recommended)
 
-Until the CLI is ready, here’s how to add a component manually:
+The easiest way to add Clippkit components to your project is using the shadcn/ui CLI:
 
-1. **Browse the Docs:** Pick a component you’d like to use.
-2. **Copy the Code:** Each component page includes its source.
-3. **Add to Your Project:** Create a new file inside your Remotion app (e.g., `src/components/PoppingText.tsx`) and paste the code in.
-4. **Fix Imports (if needed):** Adjust any internal paths or helpers if your project’s structure is different.
-5. **Use It:** Now you can import and use the component like any other React component.
+```package-install
+npx shadcn@latest add "https://clippkit.com/r/card-flip"
+```
 
-We know this isn’t the smoothest setup, but it’s temporary. The idea is to give you full access while we finish the tooling.
+This will automatically:
+- Download the component code
+- Install any required dependencies
+- Place the component in your project's components directory
+- Set up the necessary imports
 
 ---
 
-### CLI Install – Coming Soon
+### Manual Installation (Alternative)
 
-We’re nearly there with a CLI to make this whole thing easier. You’ll soon be able to run something like:
+If you prefer to install components manually or need to customize the installation:
 
-      ```package-install
-    npx shadcn@latest add "https://clippkit/r/sliding-text"
-    ```
+1. **Browse the Docs:** Pick a component you'd like to use.
+2. **Copy the Code:** Each component page includes its source code.
+3. **Add to Your Project:** Create a new file inside your Remotion app (e.g., `src/components/card-flip.tsx`) and paste the code in.
+4. **Fix Imports (if needed):** Adjust any internal paths or helpers if your project's structure is different.
+5. **Use It:** Now you can import and use the component like any other React component.
 
-    This will set everything up for you automatically—no copy-pasting needed.
+---
+
+### Next Steps
+
+Once you've installed a component (either via CLI or manually), you can:
+
+1. **Import it** in your Remotion composition
+2. **Customize the props** to match your design
+3. **Add it to your video timeline**
+
+Check out the individual component pages for detailed usage examples and API documentation.

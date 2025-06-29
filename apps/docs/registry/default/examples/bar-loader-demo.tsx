@@ -1,7 +1,7 @@
 import React from "react";
 import { Player } from "@remotion/player";
 
-import BarLoader from "../ui/bar-loader";
+import BarLoader from "../components/bar-loader";
 
 // Define props for the new composition component
 interface BarLoaderCompositionProps {

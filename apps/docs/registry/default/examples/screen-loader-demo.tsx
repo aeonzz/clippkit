@@ -1,7 +1,7 @@
 import React from "react";
 import { Player } from "@remotion/player";
 
-import ScreenLoader, { ScreenLoaderProps } from "../ui/screen-loader";
+import ScreenLoader, { ScreenLoaderProps } from "../components/screen-loader";
 
 // ScreenLoaderComposition component removed
 

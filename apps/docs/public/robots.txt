@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://clippkit.com
+Host: https://www.clippkit.com/
 
 # Sitemaps
-Sitemap: https://clippkit.com/sitemap.xml
+Sitemap: https://www.clippkit.com/sitemap.xml
