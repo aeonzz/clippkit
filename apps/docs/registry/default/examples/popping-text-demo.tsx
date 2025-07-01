@@ -1,6 +1,6 @@
 import { Player } from "@remotion/player";
 
-import PoppingText from "../ui/popping-text";
+import PoppingText from "../components/popping-text";
 
 export default function PoppingTextDemo() {
   const poppingTextProps = {

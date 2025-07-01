@@ -1,6 +1,6 @@
 import { Player } from "@remotion/player";
 
-import FloatingCard from "../ui/floating-card"; // Adjusted path
+import FloatingCard from "../components/floating-card"; // Adjusted path
 
 export default function FloatingCardDemo() {
   const floatingCardProps = {

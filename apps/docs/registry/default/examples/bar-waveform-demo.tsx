@@ -3,7 +3,7 @@ import { MediaUtilsAudioData, useAudioData } from "@remotion/media-utils";
 import { Player } from "@remotion/player";
 import { Audio } from "remotion";
 
-import BarWaveform from "../ui/bar-waveform"; // Import BarWaveform
+import BarWaveform from "../components/bar-waveform"; // Import BarWaveform
 
 // Media source for the demo
 const MEDIA_SRC =

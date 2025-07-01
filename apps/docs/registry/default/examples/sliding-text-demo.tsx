@@ -1,6 +1,6 @@
 import { Player } from "@remotion/player";
 
-import SlidingText from "../ui/sliding-text";
+import SlidingText from "../components/sliding-text";
 
 export default function SlidingTextDemo() {
   const slidingTextProps = {

@@ -1,6 +1,6 @@
 import { Player } from "@remotion/player";
 
-import CardFlip from "../ui/card-flip";
+import CardFlip from "../components/card-flip";
 
 export default function CardFlipDemo() {
   const cardFlipProps = {

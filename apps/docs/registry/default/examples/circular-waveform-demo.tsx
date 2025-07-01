@@ -3,7 +3,7 @@ import { MediaUtilsAudioData, useAudioData } from "@remotion/media-utils";
 import { Player } from "@remotion/player";
 import { Audio } from "remotion"; // Import Audio
 
-import CircularWaveform from "../ui/circular-waveform";
+import CircularWaveform from "../components/circular-waveform";
 
 // Media source for the demo
 const MEDIA_SRC =

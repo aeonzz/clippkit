@@ -1,6 +1,6 @@
 import { Player } from "@remotion/player";
 
-import ToastCard, { PositionPreset } from "../ui/toast-card"; // Adjust path as necessary
+import ToastCard, { PositionPreset } from "../components/toast-card"; // Adjust path as necessary
 
 export default function ToastCardDemo() {
   const toastCardProps = {

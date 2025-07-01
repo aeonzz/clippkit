@@ -1,7 +1,9 @@
 import React from "react";
 import { Player } from "@remotion/player";
 
-import CircularLoader, { CircularProgressProps } from "../ui/circular-loader";
+import CircularLoader, {
+  CircularProgressProps,
+} from "../components/circular-loader";
 
 // This Composition component will pass props to the new CircularLoader
 interface CircularLoaderCompositionProps {

@@ -1,6 +1,6 @@
 import { Player } from "@remotion/player";
 
-import TypingText from "../ui/typing-text";
+import TypingText from "../components/typing-text";
 
 export default function TypingTextDemo() {
   const typingTextProps = {
