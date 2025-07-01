@@ -1,7 +1,9 @@
+import React from "react";
 import type { Page } from "fumadocs-core/source";
 import { AutoTypeTable } from "fumadocs-typescript/ui";
 import { CodeBlock, Pre } from "fumadocs-ui/components/codeblock";
 import { Heading } from "fumadocs-ui/components/heading";
+import { ImageZoom } from "fumadocs-ui/components/image-zoom";
 import { Step, Steps } from "fumadocs-ui/components/steps";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import defaultComponents from "fumadocs-ui/mdx";
@@ -71,6 +73,12 @@ export function useMdxComponents(
     ComponentCollectionWrapper,
     Steps,
     Step,
+    img: (props) => (
+      <ImageZoom
+        className="border-border rounded-md border"
+        {...(props as any)}
+      />
+    ),
     AutoTypeTable: (props) => (
       <div className="auto-type-table">
         <AutoTypeTable {...props} />
