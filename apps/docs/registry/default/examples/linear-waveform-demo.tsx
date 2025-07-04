@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { MediaUtilsAudioData, useAudioData } from "@remotion/media-utils";
 import { Player } from "@remotion/player";
