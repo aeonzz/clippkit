@@ -1,0 +1,24 @@
+{
+  "name": "u-typing-text",
+  "type": "registry:block",
+  "description": "",
+  "files": [
+    {
+      "path": "blocks/typing-text/page.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Player } from \"@remotion/player\";\r\n\r\nimport TypingText from \"@/registry/default/components/typing-text\"; // Adjust path as necessary\r\n\r\nexport default function TypingTextDemo() {\r\n  const typingTextProps = {\r\n    text: \"Typing text...\",\r\n    textColor: \"var(--foreground)\",\r\n    cursorColor: \"var(--primary)\",\r\n    fontSize: \"2.5rem\",\r\n    fontFamily: \"monospace\",\r\n    fontWeight: \"normal\",\r\n    durationInFramesToType: 120, // Type out over 4 seconds at 30fps\r\n    cursorBlinkSpeed: 15, // Default blink speed\r\n  };\r\n\r\n  return (\r\n    <Player\r\n      component={TypingText}\r\n      inputProps={typingTextProps}\r\n      durationInFrames={180} // Allow time for text to be fully typed + pause\r\n      compositionWidth={480}\r\n      compositionHeight={270} // 16:9 aspect ratio\r\n      fps={30}\r\n      autoPlay\r\n      controls // Show player controls\r\n      loop // Loop the animation\r\n    />\r\n  );\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/main.tsx"
+    },
+    {
+      "path": "components/typing-text.tsx",
+      "content": "\"use client\";\n\nimport React from \"react\";\nimport { interpolate, useCurrentFrame } from \"remotion\";\n\ninterface TypingTextProps {\n  text?: string;\n  textColor?: string;\n  cursorColor?: string;\n  fontSize?: string;\n  fontFamily?: string;\n  fontWeight?: string;\n  durationInFramesToType?: number; // Total frames to type out the entire text\n  cursorBlinkSpeed?: number; // Frames for one blink cycle (e.g., 15 means it blinks every 15 frames)\n}\n\nexport default function TypingText({\n  text = \"TYPE ME...\",\n  textColor = \"white\",\n  cursorColor = \"white\",\n  fontSize = \"3rem\",\n  fontFamily = \"'Courier New', monospace\",\n  fontWeight = \"bold\",\n  durationInFramesToType, // If not provided, defaults to text.length * 5 frames\n  cursorBlinkSpeed = 15,\n}: TypingTextProps) {\n  const frame = useCurrentFrame();\n\n  const actualDurationInFramesToType =\n    durationInFramesToType !== undefined\n      ? durationInFramesToType\n      : text.length * 5; // Default: 5 frames per character\n\n  const visibleCharacters = Math.floor(\n    interpolate(frame, [0, actualDurationInFramesToType], [0, text.length], {\n      extrapolateRight: \"clamp\",\n    })\n  );\n\n  const charactersToRender = text.slice(0, visibleCharacters).split(\"\");\n\n  return (\n    <div\n      style={{\n        position: \"absolute\",\n        top: \"50%\",\n        left: \"50%\",\n        transform: \"translate(-50%, -50%)\",\n        width: \"90%\", // Ensure it doesn't overflow easily\n        textAlign: \"center\",\n        padding: \"1rem\", // Add some padding\n      }}\n    >\n      <span\n        style={{\n          fontFamily,\n          fontSize,\n          fontWeight,\n          color: textColor,\n          display: \"inline-block\", // To keep cursor on the same line\n        }}\n      >\n        {charactersToRender.map((char, index) => (\n          <React.Fragment key={index}>\n            {char === \" \" ? \"\\u00A0\" : char}\n          </React.Fragment>\n        ))}\n      </span>\n      <span\n        style={{\n          display: \"inline-block\",\n          fontFamily,\n          fontSize,\n          fontWeight,\n          color: cursorColor,\n          opacity: frame % cursorBlinkSpeed < cursorBlinkSpeed / 2 ? 1 : 0,\n          marginLeft: \"0.2rem\", // Space between text and cursor\n          verticalAlign: \"middle\",\n        }}\n      >\n        ▌\n      </span>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "meta": {
+    "iframeHeight": "600px",
+    "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24",
+    "mobile": "component"
+  }
+}

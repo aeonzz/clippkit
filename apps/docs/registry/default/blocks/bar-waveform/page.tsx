@@ -5,7 +5,7 @@ import { MediaUtilsAudioData, useAudioData } from "@remotion/media-utils";
 import { Player } from "@remotion/player";
 import { Audio } from "remotion";
 
-import BarWaveform from "@/registry/default/components/bar-waveform";
+import BarWaveform from "@/registry/default/components/bar-waveform"; // Adjust path as necessary
 
 const MEDIA_SRC =
   "https://rwxrdxvxndclnqvznxfj.supabase.co/storage/v1/object/public/sounds//moon-landing.mp3";
@@ -53,18 +53,22 @@ export default function BarWaveformDemo() {
     : 300;
 
   return (
-    <Player
-      component={AudioWaveformComposition}
-      inputProps={{ barWaveformProps, mediaSrc: MEDIA_SRC }}
-      durationInFrames={playerDurationInFrames}
-      compositionWidth={640}
-      compositionHeight={360}
-      fps={30}
-      style={{
-        backgroundColor: "transparent",
-      }}
-      controls
-      loop
-    />
+    <div className="aspect-video h-[180px] sm:h-[350px] md:h-[400px]">
+      <Player
+        component={AudioWaveformComposition}
+        inputProps={{ barWaveformProps, mediaSrc: MEDIA_SRC }}
+        durationInFrames={playerDurationInFrames}
+        compositionWidth={640}
+        compositionHeight={360}
+        fps={30}
+        style={{
+          width: "100%",
+          height: "100%",
+          backgroundColor: "transparent",
+        }}
+        controls
+        loop
+      />
+    </div>
   );
 }

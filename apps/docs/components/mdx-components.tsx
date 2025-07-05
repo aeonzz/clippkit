@@ -2,6 +2,7 @@ import React from "react";
 import type { Page } from "fumadocs-core/source";
 import { AutoTypeTable } from "fumadocs-typescript/ui";
 import { CodeBlock, Pre } from "fumadocs-ui/components/codeblock";
+import { File, Files, Folder } from "fumadocs-ui/components/files";
 import { Heading } from "fumadocs-ui/components/heading";
 import { ImageZoom } from "fumadocs-ui/components/image-zoom";
 import { Step, Steps } from "fumadocs-ui/components/steps";
@@ -19,6 +20,7 @@ import { ComponentSource } from "@/components/component-source";
 import { ComponentTabs } from "@/components/component-tabs";
 import { CSSVariablesTable } from "@/components/css-variables-table";
 import { DataAttributesTable } from "@/components/data-attributes-table";
+import { FileWrapper } from "@/components/file-wrapper";
 import { GithubInfo } from "@/components/github-info";
 import { Kbd } from "@/components/kbd";
 import { KeyboardShortcutsTable } from "@/components/keyboard-shortcuts-table";
@@ -90,6 +92,12 @@ export function useMdxComponents(
     GithubInfo,
     HomeIcon,
     PlayerCard,
+    FileWrapper,
+    File,
+    Files: (props) => (
+      <Files className="bg-background text-foreground" {...props} />
+    ),
+    Folder,
   };
 }
 

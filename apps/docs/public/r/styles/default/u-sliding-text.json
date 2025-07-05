@@ -1,0 +1,24 @@
+{
+  "name": "u-sliding-text",
+  "type": "registry:block",
+  "description": "",
+  "files": [
+    {
+      "path": "blocks/sliding-text/page.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Player } from \"@remotion/player\";\r\n\r\nimport SlidingText from \"@/registry/default/components/sliding-text\"; // Adjust path as necessary\r\n\r\nexport default function SlidingTextDemo() {\r\n  const slidingTextProps = {\r\n    text: \"Sliding Text!\",\r\n    textColor: \"var(--foreground)\",\r\n    fontSize: \"2.5rem\",\r\n    slideDirection: \"left\" as const,\r\n    durationInFrames: 30, // Animation duration for the text itself\r\n    initialOffset: 150,\r\n    damping: 12,\r\n    mass: 0.5,\r\n    stiffness: 100,\r\n  };\r\n\r\n  return (\r\n    <Player\r\n      component={SlidingText}\r\n      inputProps={slidingTextProps}\r\n      durationInFrames={60} // Total duration of the player timeline (e.g., 2 seconds at 30fps)\r\n      compositionWidth={480}\r\n      compositionHeight={270} // 16:9 aspect ratio\r\n      fps={30}\r\n      autoPlay\r\n      controls // Show player controls\r\n      loop // Loop the animation\r\n    />\r\n  );\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/main.tsx"
+    },
+    {
+      "path": "components/sliding-text.tsx",
+      "content": "\"use client\";\n\nimport { spring, useCurrentFrame, useVideoConfig } from \"remotion\";\n\ninterface SlidingTextProps {\n  text?: string;\n  textColor?: string;\n  fontSize?: string;\n  slideDirection?: \"left\" | \"right\" | \"top\" | \"bottom\";\n  durationInFrames?: number;\n  initialOffset?: number;\n  damping?: number;\n  mass?: number;\n  stiffness?: number;\n}\n\nexport default function SlidingText({\n  text = \"Sliding Text!\",\n  textColor = \"var(--foreground)\",\n  fontSize = \"4rem\",\n  slideDirection = \"left\",\n  durationInFrames = 30,\n  initialOffset = 200,\n  damping = 12,\n  mass = 0.5,\n  stiffness = 100, // Default stiffness\n}: SlidingTextProps) {\n  const frame = useCurrentFrame();\n  const { fps } = useVideoConfig();\n\n  const opacity = spring({\n    frame,\n    fps,\n    from: 0,\n    to: 1,\n    durationInFrames,\n  });\n\n  const slideAnimation = spring({\n    frame,\n    fps,\n    from: initialOffset,\n    to: 0,\n    durationInFrames,\n    config: {\n      damping,\n      mass,\n      stiffness,\n    },\n  });\n\n  let transformStyle = \"\";\n  switch (slideDirection) {\n    case \"left\":\n      transformStyle = `translate(-50%, -50%) translateX(${slideAnimation}px)`;\n      break;\n    case \"right\":\n      transformStyle = `translate(-50%, -50%) translateX(${-slideAnimation}px)`;\n      break;\n    case \"top\":\n      transformStyle = `translate(-50%, -50%) translateY(${slideAnimation}px)`;\n      break;\n    case \"bottom\":\n      transformStyle = `translate(-50%, -50%) translateY(${-slideAnimation}px)`;\n      break;\n    default:\n      transformStyle = `translate(-50%, -50%) translateX(${slideAnimation}px)`;\n  }\n\n  return (\n    <div\n      style={{\n        position: \"absolute\",\n        top: \"50%\",\n        left: \"50%\",\n        transform: transformStyle,\n        width: \"100%\",\n        textAlign: \"center\",\n      }}\n    >\n      <h1\n        style={{\n          opacity,\n          color: textColor,\n          fontSize: fontSize,\n          fontWeight: \"bold\",\n        }}\n      >\n        {text}\n      </h1>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "meta": {
+    "iframeHeight": "600px",
+    "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24",
+    "mobile": "component"
+  }
+}

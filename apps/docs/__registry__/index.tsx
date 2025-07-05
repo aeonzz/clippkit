@@ -1050,5 +1050,257 @@ export const Index: Record<string, any> = {
       meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
       chunks: []
     },
+    "u-circular-waveform": {
+      name: "u-circular-waveform",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/circular-waveform/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/circular-waveform.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/circular-waveform/page.tsx")),
+      source: "__registry__/default/blocks/circular-waveform/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-linear-waveform": {
+      name: "u-linear-waveform",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/linear-waveform/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/linear-waveform.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/linear-waveform/page.tsx")),
+      source: "__registry__/default/blocks/linear-waveform/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-card-flip": {
+      name: "u-card-flip",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/card-flip/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/card-flip.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/card-flip/page.tsx")),
+      source: "__registry__/default/blocks/card-flip/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-floating-card": {
+      name: "u-floating-card",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/floating-card/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/floating-card.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/floating-card/page.tsx")),
+      source: "__registry__/default/blocks/floating-card/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-toast-card": {
+      name: "u-toast-card",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/toast-card/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/toast-card.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/toast-card/page.tsx")),
+      source: "__registry__/default/blocks/toast-card/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-bar-loader": {
+      name: "u-bar-loader",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/bar-loader/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/bar-loader.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/bar-loader/page.tsx")),
+      source: "__registry__/default/blocks/bar-loader/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-circular-loader": {
+      name: "u-circular-loader",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/circular-loader/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/circular-loader.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/circular-loader/page.tsx")),
+      source: "__registry__/default/blocks/circular-loader/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-screen-loader": {
+      name: "u-screen-loader",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/screen-loader/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/screen-loader.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/screen-loader/page.tsx")),
+      source: "__registry__/default/blocks/screen-loader/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-glitch-text": {
+      name: "u-glitch-text",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/glitch-text/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/glitch-text.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/glitch-text/page.tsx")),
+      source: "__registry__/default/blocks/glitch-text/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-popping-text": {
+      name: "u-popping-text",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/popping-text/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/popping-text.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/popping-text/page.tsx")),
+      source: "__registry__/default/blocks/popping-text/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-sliding-text": {
+      name: "u-sliding-text",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/sliding-text/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/sliding-text.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/sliding-text/page.tsx")),
+      source: "__registry__/default/blocks/sliding-text/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-typing-text": {
+      name: "u-typing-text",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/typing-text/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/typing-text.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/typing-text/page.tsx")),
+      source: "__registry__/default/blocks/typing-text/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
   },
 }

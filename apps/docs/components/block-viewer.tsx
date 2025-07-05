@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   Check,
@@ -200,28 +199,7 @@ function BlockViewerMobile({ children }: { children: React.ReactNode }) {
           {item.name}
         </div>
       </div>
-      {item.meta?.mobile === "component" ? (
-        children
-      ) : (
-        <div className="overflow-hidden rounded-xl border">
-          <Image
-            src={`/r/styles/new-york-v4/${item.name}-light.png`}
-            alt={item.name}
-            data-block={item.name}
-            width={1440}
-            height={900}
-            className="object-cover dark:hidden"
-          />
-          <Image
-            src={`/r/styles/new-york-v4/${item.name}-dark.png`}
-            alt={item.name}
-            data-block={item.name}
-            width={1440}
-            height={900}
-            className="hidden object-cover dark:block"
-          />
-        </div>
-      )}
+      {item.meta?.mobile === "component" ? children : null}
     </div>
   );
 }
