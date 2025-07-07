@@ -25,10 +25,15 @@ npx shadcn@latest add "https://clippkit.com/r/bar-waveform"
 
 <Steps>
   <Step>
-    Create a new file, for example, at `src/components/clippkit/bar-waveform.tsx` (or your preferred location) and paste the following code into it.
+    Create a new file, for example, at
+    `src/components/clippkit/bar-waveform.tsx` (or your preferred location) and
+    paste the following code into it.
     <ComponentSource name="bar-waveform" />
   </Step>
-  <Step>Update the import paths in your Remotion compositions if you placed the file in a different location than shown in the usage examples.</Step>
+  <Step>
+    Update the import paths in your Remotion compositions if you placed the file
+    in a different location than shown in the usage examples.
+  </Step>
 </Steps>
 
 ## Usage
@@ -44,18 +49,24 @@ Once the `BarWaveform` component is added to your project (either via CLI or Man
 
 Here’s an example folder layout showing where to place the component and how it fits into a typical Remotion project
 
-<FileWrapper name="bar-waveform">
-  <Files>
-    <Folder name="app" defaultOpen>
-      <File name="main.tsx" />
-    </Folder>
-    <Folder name="components" defaultOpen>
-      <Folder name="clippkit" defaultOpen>
-        <File name="bar-waveform.tsx" />
-      </Folder>
-    </Folder>
-  </Files>
-</FileWrapper>
+<ComponentFileExplorer
+  expandLink="/usage/u-bar-waveform"
+  files={[
+    {
+      name: "app",
+      children: [{ name: "main.tsx" }],
+    },
+    {
+      name: "components",
+      children: [
+        { name: "clippkit", children: [{ name: "bar-waveform.tsx" }] },
+      ],
+    },
+  ]}
+>
+  <ComponentCode name="bar-waveform-demo" />
+  <ComponentCode name="bar-waveform" />
+</ComponentFileExplorer>
 
 ### Define a Composition
 

@@ -37,18 +37,24 @@ Once the `CardFlip` component is added to your project (either via CLI or Manual
 
 Here’s an example folder layout showing where to place the component and how it fits into a typical Remotion project
 
-<FileWrapper name="card-flip">
-  <Files>
-    <Folder name="app" defaultOpen>
-      <File name="main.tsx" />
-    </Folder>
-    <Folder name="components" defaultOpen>
-      <Folder name="clippkit" defaultOpen>
-        <File name="card-flip.tsx" />
-      </Folder>
-    </Folder>
-  </Files>
-</FileWrapper>
+<ComponentFileExplorer
+  expandLink="/usage/u-card-flip"
+  files={[
+    {
+      name: "app",
+      children: [{ name: "main.tsx" }],
+    },
+    {
+      name: "components",
+      children: [
+        { name: "clippkit", children: [{ name: "card-flip.tsx" }] },
+      ],
+    },
+  ]}
+>
+  <ComponentCode name="card-flip-demo" />
+  <ComponentCode name="card-flip" />
+</ComponentFileExplorer>
 
 ### Define a Composition
 

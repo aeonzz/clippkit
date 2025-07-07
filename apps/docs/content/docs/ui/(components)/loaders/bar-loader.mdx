@@ -43,18 +43,24 @@ Once the `BarLoader` component is added to your project (either via CLI or Manua
 
 Here’s an example folder layout showing where to place the component and how it fits into a typical Remotion project
 
-<FileWrapper name="bar-loader">
-  <Files>
-    <Folder name="app" defaultOpen>
-      <File name="main.tsx" />
-    </Folder>
-    <Folder name="components" defaultOpen>
-      <Folder name="clippkit" defaultOpen>
-        <File name="bar-loader.tsx" />
-      </Folder>
-    </Folder>
-  </Files>
-</FileWrapper>
+<ComponentFileExplorer
+  expandLink="/usage/u-bar-loader"
+  files={[
+    {
+      name: "app",
+      children: [{ name: "main.tsx" }],
+    },
+    {
+      name: "components",
+      children: [
+        { name: "clippkit", children: [{ name: "bar-loader.tsx" }] },
+      ],
+    },
+  ]}
+>
+  <ComponentCode name="bar-loader-demo" />
+  <ComponentCode name="bar-loader" />
+</ComponentFileExplorer>
 
 ### Define a Composition
 

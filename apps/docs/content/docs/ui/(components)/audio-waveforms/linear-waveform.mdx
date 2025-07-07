@@ -44,18 +44,24 @@ Once the `LinearWaveform` component is added to your project (either via CLI or 
 
 Here’s an example folder layout showing where to place the component and how it fits into a typical Remotion project
 
-<FileWrapper name="linear-waveform">
-  <Files>
-    <Folder name="app" defaultOpen>
-      <File name="main.tsx" />
-    </Folder>
-    <Folder name="components" defaultOpen>
-      <Folder name="clippkit" defaultOpen>
-        <File name="linear-waveform.tsx" />
-      </Folder>
-    </Folder>
-  </Files>
-</FileWrapper>
+<ComponentFileExplorer
+  expandLink="/usage/u-linear-waveform"
+  files={[
+    {
+      name: "app",
+      children: [{ name: "main.tsx" }],
+    },
+    {
+      name: "components",
+      children: [
+        { name: "clippkit", children: [{ name: "linear-waveform.tsx" }] },
+      ],
+    },
+  ]}
+>
+  <ComponentCode name="linear-waveform-demo" />
+  <ComponentCode name="linear-waveform" />
+</ComponentFileExplorer>
 
 ### Define a Composition
 

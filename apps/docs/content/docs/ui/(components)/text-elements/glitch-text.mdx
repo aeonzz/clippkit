@@ -37,18 +37,24 @@ Once the `GlitchText` component is added to your project (either via CLI or Manu
 
 Here’s an example folder layout showing where to place the component and how it fits into a typical Remotion project
 
-<FileWrapper name="glitch-text">
-  <Files>
-    <Folder name="app" defaultOpen>
-      <File name="main.tsx" />
-    </Folder>
-    <Folder name="components" defaultOpen>
-      <Folder name="clippkit" defaultOpen>
-        <File name="glitch-text.tsx" />
-      </Folder>
-    </Folder>
-  </Files>
-</FileWrapper>
+<ComponentFileExplorer
+  expandLink="/usage/u-glitch-text"
+  files={[
+    {
+      name: "app",
+      children: [{ name: "main.tsx" }],
+    },
+    {
+      name: "components",
+      children: [
+        { name: "clippkit", children: [{ name: "glitch-text.tsx" }] },
+      ],
+    },
+  ]}
+>
+  <ComponentCode name="glitch-text-demo" />
+  <ComponentCode name="glitch-text" />
+</ComponentFileExplorer>
 
 ### Define a Composition
 

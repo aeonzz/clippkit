@@ -43,18 +43,24 @@ Once the `ScreenLoader` component is added to your project (either via CLI or Ma
 
 Here’s an example folder layout showing where to place the component and how it fits into a typical Remotion project
 
-<FileWrapper name="screen-loader">
-  <Files>
-    <Folder name="app" defaultOpen>
-      <File name="main.tsx" />
-    </Folder>
-    <Folder name="components" defaultOpen>
-      <Folder name="clippkit" defaultOpen>
-        <File name="screen-loader.tsx" />
-      </Folder>
-    </Folder>
-  </Files>
-</FileWrapper>
+<ComponentFileExplorer
+  expandLink="/usage/u-screen-loader"
+  files={[
+    {
+      name: "app",
+      children: [{ name: "main.tsx" }],
+    },
+    {
+      name: "components",
+      children: [
+        { name: "clippkit", children: [{ name: "screen-loader.tsx" }] },
+      ],
+    },
+  ]}
+>
+  <ComponentCode name="screen-loader-demo" />
+  <ComponentCode name="screen-loader" />
+</ComponentFileExplorer>
 
 ### Define a Composition
 

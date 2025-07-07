@@ -43,18 +43,24 @@ Once the `CircularLoader` component is added to your project (either via CLI or 
 
 Here’s an example folder layout showing where to place the component and how it fits into a typical Remotion project
 
-<FileWrapper name="circular-loader">
-  <Files>
-    <Folder name="app" defaultOpen>
-      <File name="main.tsx" />
-    </Folder>
-    <Folder name="components" defaultOpen>
-      <Folder name="clippkit" defaultOpen>
-        <File name="circular-loader.tsx" />
-      </Folder>
-    </Folder>
-  </Files>
-</FileWrapper>
+<ComponentFileExplorer
+  expandLink="/usage/u-circular-loader"
+  files={[
+    {
+      name: "app",
+      children: [{ name: "main.tsx" }],
+    },
+    {
+      name: "components",
+      children: [
+        { name: "clippkit", children: [{ name: "circular-loader.tsx" }] },
+      ],
+    },
+  ]}
+>
+  <ComponentCode name="circular-loader-demo" />
+  <ComponentCode name="circular-loader" />
+</ComponentFileExplorer>
 
 ### Define a Composition
 

@@ -37,18 +37,24 @@ Once the `ToastCard` component is added to your project (either via CLI or Manua
 
 Here’s an example folder layout showing where to place the component and how it fits into a typical Remotion project
 
-<FileWrapper name="toast-card">
-  <Files>
-    <Folder name="app" defaultOpen>
-      <File name="main.tsx" />
-    </Folder>
-    <Folder name="components" defaultOpen>
-      <Folder name="clippkit" defaultOpen>
-        <File name="toast-card.tsx" />
-      </Folder>
-    </Folder>
-  </Files>
-</FileWrapper>
+<ComponentFileExplorer
+  expandLink="/usage/u-toast-card"
+  files={[
+    {
+      name: "app",
+      children: [{ name: "main.tsx" }],
+    },
+    {
+      name: "components",
+      children: [
+        { name: "clippkit", children: [{ name: "toast-card.tsx" }] },
+      ],
+    },
+  ]}
+>
+  <ComponentCode name="toast-card-demo" />
+  <ComponentCode name="toast-card" />
+</ComponentFileExplorer>
 
 ### Define a Composition
 
