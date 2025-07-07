@@ -10,6 +10,7 @@ import { components } from "@/registry/registry-components";
 import { examples } from "@/registry/registry-examples";
 import { lib } from "@/registry/registry-lib";
 import { ui } from "@/registry/registry-ui";
+import { blocks } from "@/registry/registry-blocks";
 
 import { styles } from "../registry/registry-styles";
 import {
@@ -18,9 +19,9 @@ import {
   type Registry,
   type registryItemTypeSchema,
 } from "../registry/schema";
-import { fixImport } from "./fix-imports.mjs";
+import { fixImport } from "@/lib/registry";
 
-export const registry: Registry = [...ui, ...lib, ...examples, ...components];
+export const registry: Registry = [...ui, ...lib, ...examples, ...components, ...blocks];
 
 const REGISTRY_PATH = path.join(process.cwd(), "public/r");
 
@@ -261,13 +262,14 @@ export const Index: Record<string, any> = {
           }
         }
 
-        const sourcePath = path.join(process.cwd(), sourceFilename);
-        if (!existsSync(sourcePath)) {
-          await fs.mkdir(sourcePath, { recursive: true });
-        }
-
-        rimraf.sync(sourcePath);
-        await fs.writeFile(sourcePath, sourceFile.getText());
+        // NOTE: The following code block is intentionally commented out.
+        // It was previously used to write the source file for blocks only.
+        // const sourcePath = path.join(process.cwd(), sourceFilename);
+        // if (!existsSync(sourcePath)) {
+        //   await fs.mkdir(sourcePath, { recursive: true });
+        // }
+        // rimraf.sync(sourcePath);
+        // await fs.writeFile(sourcePath, sourceFile.getText());
       }
 
       let componentPath = `@/registry/${style.name}/${type}/${item.name}`;
@@ -306,6 +308,7 @@ export const Index: Record<string, any> = {
       source: "${sourceFilename}",
       category: "${item.category ?? ""}",
       subcategory: "${item.subcategory ?? ""}",
+      meta: ${JSON.stringify(item.meta)},
       chunks: [${chunks.map(
         (chunk: any) => `{
         name: "${chunk.name}",

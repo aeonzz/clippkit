@@ -18,103 +18,9 @@ npx shadcn@latest add "https://clippkit.com/r/popping-text"
 
 <Steps>
   <Step>
-    Create a new file, for example, at `src/components/popping-text.tsx` (or your preferred location) and paste the following code into it.
-
-    ```tsx title="src/components/popping-text.tsx"
-    "use client";
-
-    import { spring, useCurrentFrame, useVideoConfig } from "remotion";
-
-    interface PoppingTextProps {
-      text?: string;
-      colors?: string[];
-      fontSize?: string;
-      delayPerChar?: number;
-      fontWeight?: string;
-    }
-
-    export default function PoppingText({
-      text: textProp = "Popping Text",
-      colors: colorsProp = [
-        "var(--foreground)", // Default to CSS variable for foreground color
-        "var(--primary)", // Default to CSS variable for primary color
-      ],
-      fontSize: fontSizeProp = "4rem", // Changed to 4rem to match sliding-text
-      delayPerChar = 7,
-      fontWeight: fontWeightProp = "bold",
-    }: PoppingTextProps) {
-      const frame = useCurrentFrame();
-      const { fps } = useVideoConfig();
-
-      const textChars = textProp.split("");
-      const currentColors = colorsProp;
-
-      return (
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "100%",
-            textAlign: "center",
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          {textChars.map((char, i) => {
-            const delay = i * delayPerChar;
-            const colorIndex = i % currentColors.length;
-
-            const opacity = spring({
-              frame: frame - delay,
-              fps,
-              from: 0,
-              to: 1,
-              config: {
-                mass: 0.3,
-                damping: 8,
-                stiffness: 100,
-              },
-            });
-
-            const scale = spring({
-              frame: frame - delay,
-              fps,
-              from: 0,
-              to: 1,
-              config: {
-                mass: 0.4,
-                damping: 7,
-                stiffness: 150,
-              },
-            });
-
-            return (
-              <span
-                key={i}
-                style={{
-                  display: "inline-block",
-                  opacity,
-                  color: currentColors[colorIndex],
-                  fontSize: fontSizeProp,
-                  fontWeight: fontWeightProp,
-                  transform: `scale(${scale})`,
-                }}
-              >
-                {char === " " ? "\u00A0" : char}
-              </span>
-            );
-          })}
-        </div>
-      );
-    }
-    ```
-
+    Create a new file, for example, at `src/components/clippkit/popping-text.tsx` (or your preferred location) and paste the following code into it.
+    <ComponentSource name="popping-text" />
   </Step>
-  
   <Step>Update the import paths in your Remotion compositions if you placed the file in a different location than shown in the usage examples.</Step>
 </Steps>
 
@@ -127,14 +33,37 @@ Once the `PoppingText` component is added to your project (either via CLI or Man
   [Remotion documentation](https://www.remotion.dev/docs/) to get started.
 </Callout>
 
-**Define a Composition:**
+### Project Structure Example
 
-In your Remotion project's entry file (commonly `src/Root.tsx` or `src/index.ts`), import `PoppingText` and define a `Composition`.
+Here’s an example folder layout showing where to place the component and how it fits into a typical Remotion project
 
-```tsx title="src/main.tsx (or equivalent)"
+<ComponentFileExplorer
+  expandLink="/usage/u-popping-text"
+  files={[
+    {
+      name: "app",
+      children: [{ name: "main.tsx" }],
+    },
+    {
+      name: "components",
+      children: [
+        { name: "clippkit", children: [{ name: "popping-text.tsx" }] },
+      ],
+    },
+  ]}
+>
+  <ComponentCode name="popping-text-demo" />
+  <ComponentCode name="popping-text" />
+</ComponentFileExplorer>
+
+### Define a Composition
+
+In your Remotion project's entry file (commonly `src/Root.tsx`, `src/index.tsx`, `app/main.tsx`), import `PoppingText` and define a `Composition`.
+
+```tsx title="app/main.tsx (or equivalent)"
 import { Player } from "@remotion/player";
 
-import PoppingText from "../ui/popping-text";
+import PoppingText from "@/components/clippkit/popping-text"; // Assuming you placed it in src/components/clippkit
 
 export default function PoppingTextDemo() {
   const poppingTextProps = {

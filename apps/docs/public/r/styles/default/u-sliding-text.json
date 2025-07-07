@@ -1,0 +1,24 @@
+{
+  "name": "u-sliding-text",
+  "type": "registry:block",
+  "description": "",
+  "files": [
+    {
+      "path": "blocks/sliding-text/page.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Player } from \"@remotion/player\";\r\n\r\nimport SlidingText from \"@/registry/default/components/sliding-text\"; // Adjust path as necessary\r\n\r\nexport default function SlidingTextDemo() {\r\n  const slidingTextProps = {\r\n    text: \"Sliding Text!\",\r\n    textColor: \"var(--foreground)\",\r\n    fontSize: \"2.5rem\",\r\n    slideDirection: \"left\" as const,\r\n    durationInFrames: 30, // Animation duration for the text itself\r\n    initialOffset: 150,\r\n    damping: 12,\r\n    mass: 0.5,\r\n    stiffness: 100,\r\n  };\r\n\r\n  return (\r\n    <div className=\"aspect-video h-[180px] sm:h-[350px] md:h-[400px]\">\r\n      <Player\r\n        component={SlidingText}\r\n        inputProps={slidingTextProps}\r\n        durationInFrames={60} // Total duration of the player timeline (e.g., 2 seconds at 30fps)\r\n        compositionWidth={480}\r\n        compositionHeight={270} // 16:9 aspect ratio\r\n        fps={30}\r\n        style={{\r\n          width: \"100%\",\r\n          height: \"100%\",\r\n          backgroundColor: \"transparent\",\r\n        }}\r\n        autoPlay\r\n        controls // Show player controls\r\n        loop // Loop the animation\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/main.tsx"
+    },
+    {
+      "path": "components/sliding-text.tsx",
+      "content": "\"use client\";\r\n\r\nimport { spring, useCurrentFrame, useVideoConfig } from \"remotion\";\r\n\r\ninterface SlidingTextProps {\r\n  text?: string;\r\n  textColor?: string;\r\n  fontSize?: string;\r\n  slideDirection?: \"left\" | \"right\" | \"top\" | \"bottom\";\r\n  durationInFrames?: number;\r\n  initialOffset?: number;\r\n  damping?: number;\r\n  mass?: number;\r\n  stiffness?: number;\r\n}\r\n\r\nexport default function SlidingText({\r\n  text = \"Sliding Text!\",\r\n  textColor = \"var(--foreground)\",\r\n  fontSize = \"4rem\",\r\n  slideDirection = \"left\",\r\n  durationInFrames = 30,\r\n  initialOffset = 200,\r\n  damping = 12,\r\n  mass = 0.5,\r\n  stiffness = 100, // Default stiffness\r\n}: SlidingTextProps) {\r\n  const frame = useCurrentFrame();\r\n  const { fps } = useVideoConfig();\r\n\r\n  const opacity = spring({\r\n    frame,\r\n    fps,\r\n    from: 0,\r\n    to: 1,\r\n    durationInFrames,\r\n  });\r\n\r\n  const slideAnimation = spring({\r\n    frame,\r\n    fps,\r\n    from: initialOffset,\r\n    to: 0,\r\n    durationInFrames,\r\n    config: {\r\n      damping,\r\n      mass,\r\n      stiffness,\r\n    },\r\n  });\r\n\r\n  let transformStyle = \"\";\r\n  switch (slideDirection) {\r\n    case \"left\":\r\n      transformStyle = `translate(-50%, -50%) translateX(${slideAnimation}px)`;\r\n      break;\r\n    case \"right\":\r\n      transformStyle = `translate(-50%, -50%) translateX(${-slideAnimation}px)`;\r\n      break;\r\n    case \"top\":\r\n      transformStyle = `translate(-50%, -50%) translateY(${slideAnimation}px)`;\r\n      break;\r\n    case \"bottom\":\r\n      transformStyle = `translate(-50%, -50%) translateY(${-slideAnimation}px)`;\r\n      break;\r\n    default:\r\n      transformStyle = `translate(-50%, -50%) translateX(${slideAnimation}px)`;\r\n  }\r\n\r\n  return (\r\n    <div\r\n      style={{\r\n        position: \"absolute\",\r\n        top: \"50%\",\r\n        left: \"50%\",\r\n        transform: transformStyle,\r\n        width: \"100%\",\r\n        textAlign: \"center\",\r\n      }}\r\n    >\r\n      <h1\r\n        style={{\r\n          opacity,\r\n          color: textColor,\r\n          fontSize: fontSize,\r\n          fontWeight: \"bold\",\r\n        }}\r\n      >\r\n        {text}\r\n      </h1>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "meta": {
+    "iframeHeight": "600px",
+    "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24",
+    "mobile": "component"
+  }
+}

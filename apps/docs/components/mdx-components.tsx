@@ -12,8 +12,10 @@ import type { MDXComponents } from "mdx/types";
 
 import { cn } from "@/lib/utils";
 import { Table, TableCell, TableHead, TableRow } from "@/components/ui/table";
+import { ComponentCode } from "@/components/component-code";
 import { ComponentCollectionWrapper } from "@/components/component-collection-wrapper";
 import { ComponentDialogCode } from "@/components/component-dialog-code";
+import { ComponentFileExplorer } from "@/components/component-file-explorer";
 import { ComponentPreview } from "@/components/component-preview";
 import { ComponentSource } from "@/components/component-source";
 import { ComponentTabs } from "@/components/component-tabs";
@@ -90,6 +92,8 @@ export function useMdxComponents(
     GithubInfo,
     HomeIcon,
     PlayerCard,
+    ComponentFileExplorer,
+    ComponentCode,
   };
 }
 

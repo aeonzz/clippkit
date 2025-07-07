@@ -1,0 +1,24 @@
+{
+  "name": "u-typing-text",
+  "type": "registry:block",
+  "description": "",
+  "files": [
+    {
+      "path": "blocks/typing-text/page.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Player } from \"@remotion/player\";\r\n\r\nimport TypingText from \"@/registry/default/components/typing-text\"; // Adjust path as necessary\r\n\r\nexport default function TypingTextDemo() {\r\n  const typingTextProps = {\r\n    text: \"Typing text...\",\r\n    textColor: \"var(--foreground)\",\r\n    cursorColor: \"var(--primary)\",\r\n    fontSize: \"2.5rem\",\r\n    fontFamily: \"monospace\",\r\n    fontWeight: \"normal\",\r\n    durationInFramesToType: 120, // Type out over 4 seconds at 30fps\r\n    cursorBlinkSpeed: 15, // Default blink speed\r\n  };\r\n\r\n  return (\r\n    <div className=\"aspect-video h-[180px] sm:h-[350px] md:h-[400px]\">\r\n      <Player\r\n        component={TypingText}\r\n        inputProps={typingTextProps}\r\n        durationInFrames={180} // Allow time for text to be fully typed + pause\r\n        compositionWidth={480}\r\n        compositionHeight={270} // 16:9 aspect ratio\r\n        fps={30}\r\n        style={{\r\n          width: \"100%\",\r\n          height: \"100%\",\r\n          backgroundColor: \"transparent\",\r\n        }}\r\n        autoPlay\r\n        controls // Show player controls\r\n        loop // Loop the animation\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/main.tsx"
+    },
+    {
+      "path": "components/typing-text.tsx",
+      "content": "\"use client\";\r\n\r\nimport React from \"react\";\r\nimport { interpolate, useCurrentFrame } from \"remotion\";\r\n\r\ninterface TypingTextProps {\r\n  text?: string;\r\n  textColor?: string;\r\n  cursorColor?: string;\r\n  fontSize?: string;\r\n  fontFamily?: string;\r\n  fontWeight?: string;\r\n  durationInFramesToType?: number; // Total frames to type out the entire text\r\n  cursorBlinkSpeed?: number; // Frames for one blink cycle (e.g., 15 means it blinks every 15 frames)\r\n}\r\n\r\nexport default function TypingText({\r\n  text = \"TYPE ME...\",\r\n  textColor = \"white\",\r\n  cursorColor = \"white\",\r\n  fontSize = \"3rem\",\r\n  fontFamily = \"'Courier New', monospace\",\r\n  fontWeight = \"bold\",\r\n  durationInFramesToType, // If not provided, defaults to text.length * 5 frames\r\n  cursorBlinkSpeed = 15,\r\n}: TypingTextProps) {\r\n  const frame = useCurrentFrame();\r\n\r\n  const actualDurationInFramesToType =\r\n    durationInFramesToType !== undefined\r\n      ? durationInFramesToType\r\n      : text.length * 5; // Default: 5 frames per character\r\n\r\n  const visibleCharacters = Math.floor(\r\n    interpolate(frame, [0, actualDurationInFramesToType], [0, text.length], {\r\n      extrapolateRight: \"clamp\",\r\n    })\r\n  );\r\n\r\n  const charactersToRender = text.slice(0, visibleCharacters).split(\"\");\r\n\r\n  return (\r\n    <div\r\n      style={{\r\n        position: \"absolute\",\r\n        top: \"50%\",\r\n        left: \"50%\",\r\n        transform: \"translate(-50%, -50%)\",\r\n        width: \"90%\", // Ensure it doesn't overflow easily\r\n        textAlign: \"center\",\r\n        padding: \"1rem\", // Add some padding\r\n      }}\r\n    >\r\n      <span\r\n        style={{\r\n          fontFamily,\r\n          fontSize,\r\n          fontWeight,\r\n          color: textColor,\r\n          display: \"inline-block\", // To keep cursor on the same line\r\n        }}\r\n      >\r\n        {charactersToRender.map((char, index) => (\r\n          <React.Fragment key={index}>\r\n            {char === \" \" ? \"\\u00A0\" : char}\r\n          </React.Fragment>\r\n        ))}\r\n      </span>\r\n      <span\r\n        style={{\r\n          display: \"inline-block\",\r\n          fontFamily,\r\n          fontSize,\r\n          fontWeight,\r\n          color: cursorColor,\r\n          opacity: frame % cursorBlinkSpeed < cursorBlinkSpeed / 2 ? 1 : 0,\r\n          marginLeft: \"0.2rem\", // Space between text and cursor\r\n          verticalAlign: \"middle\",\r\n        }}\r\n      >\r\n        ▌\r\n      </span>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "meta": {
+    "iframeHeight": "600px",
+    "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24",
+    "mobile": "component"
+  }
+}

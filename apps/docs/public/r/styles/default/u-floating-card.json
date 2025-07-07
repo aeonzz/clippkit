@@ -1,0 +1,24 @@
+{
+  "name": "u-floating-card",
+  "type": "registry:block",
+  "description": "",
+  "files": [
+    {
+      "path": "blocks/floating-card/page.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Player } from \"@remotion/player\";\r\n\r\nimport FloatingCard from \"@/registry/default/components/floating-card\"; // Adjust path as necessary\r\n\r\nexport default function FloatingCardDemo() {\r\n  const floatingCardProps = {\r\n    text: \"Floating Card!\",\r\n    textColor: \"var(--foreground)\",\r\n    backgroundColor: \"var(--card)\",\r\n    fontSize: \"1.5rem\",\r\n    width: \"250px\",\r\n    height: \"180px\",\r\n    borderRadius: \"20px\",\r\n    borderColor: \"var(--primary)\",\r\n    borderWidth: \"1px\",\r\n    borderStyle: \"solid\" as const,\r\n    durationInFrames: 40, // Entry animation duration\r\n    damping: 15,\r\n    mass: 0.7,\r\n    stiffness: 110,\r\n    boxShadow: \"0 10px 25px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.1)\",\r\n    floatAmplitude: 15, // Amplitude of the float\r\n    floatSpeed: 40, // Speed of the float\r\n  };\r\n\r\n  return (\r\n    <div className=\"aspect-video h-[180px] sm:h-[350px] md:h-[400px]\">\r\n      <Player\r\n        component={FloatingCard}\r\n        inputProps={floatingCardProps}\r\n        durationInFrames={180} // Total duration of the player timeline, longer to see float\r\n        compositionWidth={480}\r\n        compositionHeight={400}\r\n        fps={30}\r\n        style={{\r\n          width: \"100%\",\r\n          height: \"100%\",\r\n          backgroundColor: \"transparent\",\r\n        }}\r\n        autoPlay\r\n        controls\r\n        loop\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/main.tsx"
+    },
+    {
+      "path": "components/floating-card.tsx",
+      "content": "\"use client\";\r\n\r\nimport { spring, useCurrentFrame, useVideoConfig } from \"remotion\";\r\n\r\ninterface FloatingCardProps {\r\n  text?: string;\r\n  textColor?: string;\r\n  backgroundColor?: string;\r\n  fontSize?: string;\r\n  width?: string;\r\n  height?: string;\r\n  borderRadius?: string;\r\n  borderColor?: string;\r\n  borderWidth?: string;\r\n  borderStyle?: \"solid\" | \"dashed\" | \"dotted\";\r\n  durationInFrames?: number; // Duration of the entry animation\r\n  damping?: number;\r\n  mass?: number;\r\n  stiffness?: number;\r\n  boxShadow?: string;\r\n  floatAmplitude?: number; // How much the card floats up and down\r\n  floatSpeed?: number; // Speed of the floating animation\r\n}\r\n\r\nexport default function FloatingCard({\r\n  text = \"Floating Card\",\r\n  textColor = \"var(--card-foreground)\",\r\n  backgroundColor = \"var(--card)\",\r\n  fontSize = \"1.25rem\",\r\n  width = \"200px\",\r\n  height = \"280px\",\r\n  borderRadius = \"15px\",\r\n  borderColor = \"var(--ring)\",\r\n  borderWidth = \"1px\",\r\n  borderStyle = \"solid\",\r\n  durationInFrames = 30, // Shorter for entry animation\r\n  damping = 12,\r\n  mass = 0.5,\r\n  stiffness = 100,\r\n  boxShadow = `0 1px 3px var(--border), 0 6px 12px oklch(from var(--border) calc(l - 0.1) c h / 30%)`,\r\n  floatAmplitude = 10, // Pixels\r\n  floatSpeed = 30, // Divisor for frame, smaller is faster\r\n}: FloatingCardProps) {\r\n  const frame = useCurrentFrame();\r\n  const { fps } = useVideoConfig();\r\n\r\n  // Entry animation for scale\r\n  const scale = spring({\r\n    frame,\r\n    fps,\r\n    from: 0,\r\n    to: 1,\r\n    durationInFrames,\r\n    config: {\r\n      damping,\r\n      mass,\r\n      stiffness,\r\n    },\r\n  });\r\n\r\n  // Floating animation for position\r\n  const floatOffset = Math.sin(frame / floatSpeed) * floatAmplitude;\r\n\r\n  const cardStyle: React.CSSProperties = {\r\n    position: \"absolute\",\r\n    top: \"50%\",\r\n    left: \"50%\",\r\n    transform: `translate(-50%, -50%) translateY(${floatOffset}px) scale(${scale})`,\r\n    width,\r\n    height,\r\n    background: backgroundColor,\r\n    borderRadius,\r\n    borderColor,\r\n    borderWidth,\r\n    borderStyle,\r\n    display: \"flex\",\r\n    justifyContent: \"center\",\r\n    alignItems: \"center\",\r\n    fontSize,\r\n    fontWeight: \"bold\",\r\n    color: textColor,\r\n    padding: \"10px\", // Added padding similar to CardFlip face\r\n    boxSizing: \"border-box\", // Added for consistent padding behavior\r\n    boxShadow,\r\n    overflow: \"hidden\", // Ensures border radius is respected with box shadow\r\n  };\r\n\r\n  return <div style={cardStyle}>{text}</div>;\r\n}\r\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "meta": {
+    "iframeHeight": "600px",
+    "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24",
+    "mobile": "component"
+  }
+}

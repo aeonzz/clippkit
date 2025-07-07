@@ -1,0 +1,12 @@
+{
+  "name": "ide-view",
+  "type": "registry:component",
+  "files": [
+    {
+      "path": "components/ide-view.tsx",
+      "content": "import * as React from 'react';\nimport { codeToHtml } from 'shiki';\n\ninterface File {\n  name: string;\n  content: string;\n  path: string;\n  lang?: string;\n}\n\ninterface IdeViewProps {\n  files: File[];\n}\n\nexport function IdeView({ files }: IdeViewProps) {\n  const [selectedFile, setSelectedFile] = React.useState<File | null>(files[0] || null);\n  const [highlightedCode, setHighlightedCode] = React.useState<string>('');\n\n  React.useEffect(() => {\n    if (selectedFile) {\n      codeToHtml(selectedFile.content, {\n        lang: selectedFile.lang || 'tsx',\n        theme: 'github-dark',\n      }).then(setHighlightedCode);\n    }\n  }, [selectedFile]);\n\n  return (\n    <div className=\"flex h-full rounded-lg border\">\n      <div className=\"w-1/4 border-r\">\n        <div className=\"p-4\">\n          <h2 className=\"text-lg font-semibold\">Files</h2>\n        </div>\n        <ul>\n          {files.map((file) => (\n            <li\n              key={file.path}\n              className={`cursor-pointer p-2 ${\n                selectedFile?.path === file.path ? 'bg-muted' : ''\n              }`}\n              onClick={() => setSelectedFile(file)}\n            >\n              {file.name}\n            </li>\n          ))}\n        </ul>\n      </div>\n      <div className=\"w-3/4\">\n        {selectedFile && (\n          <div className=\"p-4\">\n            <h3 className=\"text-lg font-semibold\">{selectedFile.name}</h3>\n            <div\n              className=\"mt-4 overflow-auto rounded-lg bg-muted p-4\"\n              dangerouslySetInnerHTML={{ __html: highlightedCode }}\n            />\n          </div>\n        )}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "yawa",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/yawa.tsx",
+      "content": "import React from \"react\";\r\n\r\nexport default function Yawa() {\r\n  return <div>yawa</div>;\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

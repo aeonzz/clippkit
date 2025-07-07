@@ -21,7 +21,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     dialog: {
       name: "dialog",
@@ -39,7 +40,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     input: {
       name: "input",
@@ -57,7 +59,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     kbd: {
       name: "kbd",
@@ -75,7 +78,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "number-input": {
       name: "number-input",
@@ -95,7 +99,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "dropdown-menu": {
       name: "dropdown-menu",
@@ -115,7 +120,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     accordion: {
       name: "accordion",
@@ -135,7 +141,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     checkbox: {
       name: "checkbox",
@@ -153,7 +160,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     tabs: {
       name: "tabs",
@@ -171,7 +179,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     avatar: {
       name: "avatar",
@@ -189,7 +198,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     tooltip: {
       name: "tooltip",
@@ -207,7 +217,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     select: {
       name: "select",
@@ -225,7 +236,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     toggle: {
       name: "toggle",
@@ -243,7 +255,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     popover: {
       name: "popover",
@@ -261,7 +274,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     separator: {
       name: "separator",
@@ -281,7 +295,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     toolbar: {
       name: "toolbar",
@@ -299,7 +314,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "alert-dialog": {
       name: "alert-dialog",
@@ -319,7 +335,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "checkbox-group": {
       name: "checkbox-group",
@@ -339,7 +356,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "preview-card": {
       name: "preview-card",
@@ -359,7 +377,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     progress: {
       name: "progress",
@@ -377,7 +396,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "radio-group": {
       name: "radio-group",
@@ -397,7 +417,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     collapsible: {
       name: "collapsible",
@@ -417,7 +438,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "scroll-area": {
       name: "scroll-area",
@@ -437,7 +459,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     slider: {
       name: "slider",
@@ -455,7 +478,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     label: {
       name: "label",
@@ -473,7 +497,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     switch: {
       name: "switch",
@@ -491,7 +516,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "toggle-group": {
       name: "toggle-group",
@@ -516,7 +542,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     card: {
       name: "card",
@@ -534,7 +561,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     badge: {
       name: "badge",
@@ -552,7 +580,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     skeleton: {
       name: "skeleton",
@@ -570,7 +599,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     meter: {
       name: "meter",
@@ -588,7 +618,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     toast: {
       name: "toast",
@@ -606,7 +637,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     textarea: {
       name: "textarea",
@@ -624,7 +656,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     utils: {
       name: "utils",
@@ -642,7 +675,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "sliding-text-demo": {
       name: "sliding-text-demo",
@@ -662,7 +696,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "popping-text-demo": {
       name: "popping-text-demo",
@@ -682,7 +717,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "glitch-text-demo": {
       name: "glitch-text-demo",
@@ -702,7 +738,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "typing-text-demo": {
       name: "typing-text-demo",
@@ -722,7 +759,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "card-flip-demo": {
       name: "card-flip-demo",
@@ -742,7 +780,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "floating-card-demo": {
       name: "floating-card-demo",
@@ -762,7 +801,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "toast-card-demo": {
       name: "toast-card-demo",
@@ -782,7 +822,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "linear-waveform-demo": {
       name: "linear-waveform-demo",
@@ -802,7 +843,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "bar-waveform-demo": {
       name: "bar-waveform-demo",
@@ -822,7 +864,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "bar-loader-demo": {
       name: "bar-loader-demo",
@@ -842,7 +885,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "circular-loader-demo": {
       name: "circular-loader-demo",
@@ -862,7 +906,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "circular-waveform-demo": {
       name: "circular-waveform-demo",
@@ -882,7 +927,8 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "screen-loader-demo": {
       name: "screen-loader-demo",
@@ -902,267 +948,502 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "bar-waveform": {
       name: "bar-waveform",
       description: "",
       type: "registry:component",
       registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/components/bar-waveform.tsx",
-          type: "registry:component",
-          target: "",
-        },
-      ],
-      component: React.lazy(
-        () => import("@/registry/default/components/bar-waveform.tsx")
-      ),
+      files: [{
+        path: "registry/default/components/bar-waveform.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/components/bar-waveform.tsx")),
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "circular-waveform": {
       name: "circular-waveform",
       description: "",
       type: "registry:component",
       registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/components/circular-waveform.tsx",
-          type: "registry:component",
-          target: "",
-        },
-      ],
-      component: React.lazy(
-        () => import("@/registry/default/components/circular-waveform.tsx")
-      ),
+      files: [{
+        path: "registry/default/components/circular-waveform.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/components/circular-waveform.tsx")),
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "linear-waveform": {
       name: "linear-waveform",
       description: "",
       type: "registry:component",
       registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/components/linear-waveform.tsx",
-          type: "registry:component",
-          target: "",
-        },
-      ],
-      component: React.lazy(
-        () => import("@/registry/default/components/linear-waveform.tsx")
-      ),
+      files: [{
+        path: "registry/default/components/linear-waveform.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/components/linear-waveform.tsx")),
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "card-flip": {
       name: "card-flip",
       description: "",
       type: "registry:component",
       registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/components/card-flip.tsx",
-          type: "registry:component",
-          target: "",
-        },
-      ],
-      component: React.lazy(
-        () => import("@/registry/default/components/card-flip.tsx")
-      ),
+      files: [{
+        path: "registry/default/components/card-flip.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/components/card-flip.tsx")),
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "floating-card": {
       name: "floating-card",
       description: "",
       type: "registry:component",
       registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/components/floating-card.tsx",
-          type: "registry:component",
-          target: "",
-        },
-      ],
-      component: React.lazy(
-        () => import("@/registry/default/components/floating-card.tsx")
-      ),
+      files: [{
+        path: "registry/default/components/floating-card.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/components/floating-card.tsx")),
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "toast-card": {
       name: "toast-card",
       description: "",
       type: "registry:component",
       registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/components/toast-card.tsx",
-          type: "registry:component",
-          target: "",
-        },
-      ],
-      component: React.lazy(
-        () => import("@/registry/default/components/toast-card.tsx")
-      ),
+      files: [{
+        path: "registry/default/components/toast-card.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/components/toast-card.tsx")),
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "bar-loader": {
       name: "bar-loader",
       description: "",
       type: "registry:component",
       registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/components/bar-loader.tsx",
-          type: "registry:component",
-          target: "",
-        },
-      ],
-      component: React.lazy(
-        () => import("@/registry/default/components/bar-loader.tsx")
-      ),
+      files: [{
+        path: "registry/default/components/bar-loader.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/components/bar-loader.tsx")),
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "circular-loader": {
       name: "circular-loader",
       description: "",
       type: "registry:component",
       registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/components/circular-loader.tsx",
-          type: "registry:component",
-          target: "",
-        },
-      ],
-      component: React.lazy(
-        () => import("@/registry/default/components/circular-loader.tsx")
-      ),
+      files: [{
+        path: "registry/default/components/circular-loader.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/components/circular-loader.tsx")),
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "screen-loader": {
       name: "screen-loader",
       description: "",
       type: "registry:component",
       registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/components/screen-loader.tsx",
-          type: "registry:component",
-          target: "",
-        },
-      ],
-      component: React.lazy(
-        () => import("@/registry/default/components/screen-loader.tsx")
-      ),
+      files: [{
+        path: "registry/default/components/screen-loader.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/components/screen-loader.tsx")),
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "glitch-text": {
       name: "glitch-text",
       description: "",
       type: "registry:component",
       registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/components/glitch-text.tsx",
-          type: "registry:component",
-          target: "",
-        },
-      ],
-      component: React.lazy(
-        () => import("@/registry/default/components/glitch-text.tsx")
-      ),
+      files: [{
+        path: "registry/default/components/glitch-text.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/components/glitch-text.tsx")),
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "popping-text": {
       name: "popping-text",
       description: "",
       type: "registry:component",
       registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/components/popping-text.tsx",
-          type: "registry:component",
-          target: "",
-        },
-      ],
-      component: React.lazy(
-        () => import("@/registry/default/components/popping-text.tsx")
-      ),
+      files: [{
+        path: "registry/default/components/popping-text.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/components/popping-text.tsx")),
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "sliding-text": {
       name: "sliding-text",
       description: "",
       type: "registry:component",
       registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/components/sliding-text.tsx",
-          type: "registry:component",
-          target: "",
-        },
-      ],
-      component: React.lazy(
-        () => import("@/registry/default/components/sliding-text.tsx")
-      ),
+      files: [{
+        path: "registry/default/components/sliding-text.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/components/sliding-text.tsx")),
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
     },
     "typing-text": {
       name: "typing-text",
       description: "",
       type: "registry:component",
       registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/components/typing-text.tsx",
-          type: "registry:component",
-          target: "",
-        },
-      ],
-      component: React.lazy(
-        () => import("@/registry/default/components/typing-text.tsx")
-      ),
+      files: [{
+        path: "registry/default/components/typing-text.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/components/typing-text.tsx")),
       source: "",
       category: "",
       subcategory: "",
-      chunks: [],
+      meta: undefined,
+      chunks: []
+    },
+    "u-bar-waveform": {
+      name: "u-bar-waveform",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/bar-waveform/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/bar-waveform.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/bar-waveform/page.tsx")),
+      source: "__registry__/default/blocks/bar-waveform/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-circular-waveform": {
+      name: "u-circular-waveform",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/circular-waveform/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/circular-waveform.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/circular-waveform/page.tsx")),
+      source: "__registry__/default/blocks/circular-waveform/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-linear-waveform": {
+      name: "u-linear-waveform",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/linear-waveform/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/linear-waveform.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/linear-waveform/page.tsx")),
+      source: "__registry__/default/blocks/linear-waveform/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-card-flip": {
+      name: "u-card-flip",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/card-flip/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/card-flip.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/card-flip/page.tsx")),
+      source: "__registry__/default/blocks/card-flip/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-floating-card": {
+      name: "u-floating-card",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/floating-card/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/floating-card.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/floating-card/page.tsx")),
+      source: "__registry__/default/blocks/floating-card/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-toast-card": {
+      name: "u-toast-card",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/toast-card/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/toast-card.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/toast-card/page.tsx")),
+      source: "__registry__/default/blocks/toast-card/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-bar-loader": {
+      name: "u-bar-loader",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/bar-loader/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/bar-loader.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/bar-loader/page.tsx")),
+      source: "__registry__/default/blocks/bar-loader/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-circular-loader": {
+      name: "u-circular-loader",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/circular-loader/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/circular-loader.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/circular-loader/page.tsx")),
+      source: "__registry__/default/blocks/circular-loader/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-screen-loader": {
+      name: "u-screen-loader",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/screen-loader/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/screen-loader.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/screen-loader/page.tsx")),
+      source: "__registry__/default/blocks/screen-loader/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-glitch-text": {
+      name: "u-glitch-text",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/glitch-text/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/glitch-text.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/glitch-text/page.tsx")),
+      source: "__registry__/default/blocks/glitch-text/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-popping-text": {
+      name: "u-popping-text",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/popping-text/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/popping-text.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/popping-text/page.tsx")),
+      source: "__registry__/default/blocks/popping-text/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-sliding-text": {
+      name: "u-sliding-text",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/sliding-text/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/sliding-text.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/sliding-text/page.tsx")),
+      source: "__registry__/default/blocks/sliding-text/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
+    },
+    "u-typing-text": {
+      name: "u-typing-text",
+      description: "",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/blocks/typing-text/page.tsx",
+        type: "registry:page",
+        target: "app/main.tsx"
+      },{
+        path: "registry/default/components/typing-text.tsx",
+        type: "registry:component",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/blocks/typing-text/page.tsx")),
+      source: "__registry__/default/blocks/typing-text/page.tsx",
+      category: "",
+      subcategory: "",
+      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
+      chunks: []
     },
   },
 };

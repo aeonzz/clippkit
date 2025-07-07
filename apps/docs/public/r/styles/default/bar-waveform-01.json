@@ -1,0 +1,20 @@
+{
+  "name": "bar-waveform-01",
+  "type": "registry:component",
+  "registryDependencies": [
+    "bar-waveform"
+  ],
+  "files": [
+    {
+      "path": "blocks/bar-waveform-01.tsx",
+      "content": "\"use client\";\r\n\r\nimport React from \"react\";\r\nimport { MediaUtilsAudioData, useAudioData } from \"@remotion/media-utils\";\r\nimport { Player } from \"@remotion/player\";\r\nimport { Audio } from \"remotion\";\r\n\r\nimport BarWaveform from \"../components/bar-waveform\"; // Import BarWaveform\r\n\r\n// Media source for the demo\r\nconst MEDIA_SRC =\r\n  \"https://rwxrdxvxndclnqvznxfj.supabase.co/storage/v1/object/public/sounds//moon-landing.mp3\";\r\n\r\n// Define props for the new composition component\r\ninterface AudioWaveformCompositionProps {\r\n  barWaveformProps: Omit<\r\n    React.ComponentProps<typeof BarWaveform>,\r\n    \"audioData\"\r\n  > & { audioData?: MediaUtilsAudioData | null };\r\n  mediaSrc: string;\r\n}\r\n\r\n// New component combining BarWaveform and Audio\r\nconst AudioWaveformComposition: React.FC<AudioWaveformCompositionProps> = ({\r\n  barWaveformProps,\r\n  mediaSrc,\r\n}) => {\r\n  return (\r\n    <>\r\n      <BarWaveform {...barWaveformProps} />\r\n      <Audio src={mediaSrc} />\r\n    </>\r\n  );\r\n};\r\n\r\nexport default function BarWaveformDemo() {\r\n  const audioData = useAudioData(MEDIA_SRC);\r\n\r\n  const barWaveformProps = React.useMemo(\r\n    () => ({\r\n      numberOfSamples: 50,\r\n      barColor: \"var(--foreground)\",\r\n      barWidth: 3,\r\n      barGap: 2,\r\n      waveAmplitude: 220,\r\n      waveSpeed: 5,\r\n      audioData,\r\n      barBorderRadius: 0,\r\n      growUpwardsOnly: false,\r\n    }),\r\n    [audioData]\r\n  );\r\n\r\n  // Calculate duration in frames for the player\r\n  const playerDurationInFrames = audioData\r\n    ? Math.floor(audioData.durationInSeconds * 30)\r\n    : 300;\r\n\r\n  return (\r\n    <Player\r\n      component={AudioWaveformComposition} // Use the new component\r\n      inputProps={{ barWaveformProps, mediaSrc: MEDIA_SRC }} // Pass props for AudioWaveformComposition\r\n      durationInFrames={playerDurationInFrames}\r\n      compositionWidth={640}\r\n      compositionHeight={360}\r\n      fps={30}\r\n      style={{\r\n        width: \"100%\",\r\n        height: \"100%\",\r\n        backgroundColor: \"transparent\",\r\n      }}\r\n      controls\r\n      loop\r\n    />\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "meta": {
+    "iframeHeight": "600px",
+    "container": "w-full bg-background min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+    "mobile": "component"
+  }
+}

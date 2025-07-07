@@ -1,0 +1,24 @@
+{
+  "name": "u-popping-text",
+  "type": "registry:block",
+  "description": "",
+  "files": [
+    {
+      "path": "blocks/popping-text/page.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Player } from \"@remotion/player\";\r\n\r\nimport PoppingText from \"@/registry/default/components/popping-text\"; // Adjust path as necessary\r\n\r\nexport default function PoppingTextDemo() {\r\n  const poppingTextProps = {\r\n    text: \"Popping Text\",\r\n    colors: [\"var(--foreground)\"],\r\n    fontSize: \"2.5rem\",\r\n    fontWeight: \"bold\",\r\n  };\r\n\r\n  return (\r\n    <div className=\"aspect-video h-[180px] sm:h-[350px] md:h-[400px]\">\r\n      <Player\r\n        component={PoppingText}\r\n        inputProps={poppingTextProps}\r\n        durationInFrames={90} // Adjusted for potentially longer text or different pacing\r\n        compositionWidth={480}\r\n        compositionHeight={270} // 16:9 aspect ratio\r\n        fps={30}\r\n        style={{\r\n          width: \"100%\",\r\n          height: \"100%\",\r\n          backgroundColor: \"transparent\",\r\n        }}\r\n        autoPlay\r\n        controls // Show player controls\r\n        loop // Loop the animation\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/main.tsx"
+    },
+    {
+      "path": "components/popping-text.tsx",
+      "content": "\"use client\";\r\n\r\nimport { spring, useCurrentFrame, useVideoConfig } from \"remotion\";\r\n\r\ninterface PoppingTextProps {\r\n  text?: string;\r\n  colors?: string[];\r\n  fontSize?: string;\r\n  delayPerChar?: number;\r\n  fontWeight?: string;\r\n}\r\n\r\nexport default function PoppingText({\r\n  text: textProp = \"Popping Text\",\r\n  colors: colorsProp = [\r\n    \"var(--foreground)\", // Default to CSS variable for foreground color\r\n    \"var(--primary)\", // Default to CSS variable for primary color\r\n  ],\r\n  fontSize: fontSizeProp = \"4rem\", // Changed to 4rem to match sliding-text\r\n  delayPerChar = 7,\r\n  fontWeight: fontWeightProp = \"bold\",\r\n}: PoppingTextProps) {\r\n  const frame = useCurrentFrame();\r\n  const { fps } = useVideoConfig();\r\n\r\n  const textChars = textProp.split(\"\");\r\n  const currentColors = colorsProp;\r\n\r\n  return (\r\n    <div\r\n      style={{\r\n        position: \"absolute\",\r\n        top: \"50%\",\r\n        left: \"50%\",\r\n        transform: \"translate(-50%, -50%)\",\r\n        width: \"100%\",\r\n        textAlign: \"center\",\r\n        height: \"100%\",\r\n        display: \"flex\",\r\n        alignItems: \"center\",\r\n        justifyContent: \"center\",\r\n      }}\r\n    >\r\n      {textChars.map((char, i) => {\r\n        const delay = i * delayPerChar;\r\n        const colorIndex = i % currentColors.length;\r\n\r\n        const opacity = spring({\r\n          frame: frame - delay,\r\n          fps,\r\n          from: 0,\r\n          to: 1,\r\n          config: {\r\n            mass: 0.3,\r\n            damping: 8,\r\n            stiffness: 100,\r\n          },\r\n        });\r\n\r\n        const scale = spring({\r\n          frame: frame - delay,\r\n          fps,\r\n          from: 0,\r\n          to: 1,\r\n          config: {\r\n            mass: 0.4,\r\n            damping: 7,\r\n            stiffness: 150,\r\n          },\r\n        });\r\n\r\n        return (\r\n          <span\r\n            key={i}\r\n            style={{\r\n              display: \"inline-block\",\r\n              opacity,\r\n              color: currentColors[colorIndex],\r\n              fontSize: fontSizeProp,\r\n              fontWeight: fontWeightProp,\r\n              transform: `scale(${scale})`,\r\n            }}\r\n          >\r\n            {char === \" \" ? \"\\u00A0\" : char}\r\n          </span>\r\n        );\r\n      })}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "meta": {
+    "iframeHeight": "600px",
+    "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24",
+    "mobile": "component"
+  }
+}
