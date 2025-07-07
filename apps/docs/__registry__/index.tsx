@@ -1302,22 +1302,5 @@ export const Index: Record<string, any> = {
       meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-center md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
       chunks: []
     },
-    "u-bar-waveform-page": {
-      name: "u-bar-waveform-page",
-      description: "",
-      type: "registry:page",
-      registryDependencies: undefined,
-      files: [{
-        path: "registry/default/blocks/bar-waveform/page.tsx",
-        type: "registry:page",
-        target: ""
-      }],
-      component: React.lazy(() => import("@/registry/default/blocks/bar-waveform/page.tsx")),
-      source: "",
-      category: "",
-      subcategory: "",
-      meta: undefined,
-      chunks: []
-    },
   },
 }
